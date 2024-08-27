@@ -1,0 +1,110 @@
+{
+    "sourceFile": "Routes/Auth.route.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1724714598768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724714609928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-const \n\\ No newline at end of file\n+const express = require('express');\n+const router = express.Router();\n"
+                },
+                {
+                    "date": 1724714616789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,4 @@\n const express = require('express');\n const router = express.Router();\n+\n+module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724714703762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,7 @@\n const express = require('express');\n const router = express.Router();\n \n+router\n+\n+\n module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724714709292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const express = require('express');\n const router = express.Router();\n \n-router\n+router.post\n \n \n module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724714717041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n const express = require('express');\n const router = express.Router();\n \n-router.post\n+router.post('/register', async(req, res, next) => {\n+    \n \n \n module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724714742501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n const express = require('express');\n const router = express.Router();\n \n router.post('/register', async(req, res, next) => {\n-    \n+    res.send('Register');\n+});\n \n+router.post('/register', async(req, res, next) => {\n+    res.send('Register');\n+});\n \n module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724714750615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,6 @@\n router.post('/register', async(req, res, next) => {\n     res.send('Register');\n });\n \n+\n module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724714755695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,13 @@\n router.post('/register', async(req, res, next) => {\n     res.send('Register');\n });\n \n+router.post('/register', async(req, res, next) => {\n+    res.send('Register');\n+});\n \n+router.post('/register', async(req, res, next) => {\n+    res.send('Register');\n+});\n+\n module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724714761304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n router.post('/register', async(req, res, next) => {\n     res.send('Register');\n });\n \n-router.post('/register', async(req, res, next) => {\n+router.post('/', async(req, res, next) => {\n     res.send('Register');\n });\n \n router.post('/register', async(req, res, next) => {\n"
+                },
+                {
+                    "date": 1724714768383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,13 @@\n router.post('/register', async(req, res, next) => {\n     res.send('Register');\n });\n \n-router.post('/', async(req, res, next) => {\n+router.post('/login', async(req, res, next) => {\n     res.send('Register');\n });\n \n-router.post('/register', async(req, res, next) => {\n+router.post('/', async(req, res, next) => {\n     res.send('Register');\n });\n \n router.post('/register', async(req, res, next) => {\n"
+                },
+                {
+                    "date": 1724714780649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,13 +8,13 @@\n router.post('/login', async(req, res, next) => {\n     res.send('Register');\n });\n \n-router.post('/', async(req, res, next) => {\n+router.post('/signup', async(req, res, next) => {\n     res.send('Register');\n });\n \n-router.post('/register', async(req, res, next) => {\n+router.post('/logout', async(req, res, next) => {\n     res.send('Register');\n });\n \n module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724714809169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n router.post('/login', async(req, res, next) => {\n     res.send('Register');\n });\n \n-router.post('/signup', async(req, res, next) => {\n+router.post('/re', async(req, res, next) => {\n     res.send('Register');\n });\n \n router.post('/logout', async(req, res, next) => {\n"
+                },
+                {
+                    "date": 1724714816442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n router.post('/login', async(req, res, next) => {\n     res.send('Register');\n });\n \n-router.post('/re', async(req, res, next) => {\n+router.post('/refresh-token', async(req, res, next) => {\n     res.send('Register');\n });\n \n router.post('/logout', async(req, res, next) => {\n"
+                },
+                {
+                    "date": 1724714824887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require('express');\n const router = express.Router();\n \n router.post('/register', async(req, res, next) => {\n-    res.send('Register');\n+    res.send('Register ');\n });\n \n router.post('/login', async(req, res, next) => {\n     res.send('Register');\n"
+                },
+                {
+                    "date": 1724714836125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n const express = require('express');\n const router = express.Router();\n \n router.post('/register', async(req, res, next) => {\n-    res.send('Register ');\n+    res.send('Register route');\n });\n \n router.post('/login', async(req, res, next) => {\n-    res.send('Register');\n+    res.send('Login route');\n });\n \n router.post('/refresh-token', async(req, res, next) => {\n     res.send('Register');\n"
+                },
+                {
+                    "date": 1724714844571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     res.send('Login route');\n });\n \n router.post('/refresh-token', async(req, res, next) => {\n-    res.send('Register');\n+    res.send('refresh');\n });\n \n router.post('/logout', async(req, res, next) => {\n     res.send('Register');\n"
+                },
+                {
+                    "date": 1724714849950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     res.send('Login route');\n });\n \n router.post('/refresh-token', async(req, res, next) => {\n-    res.send('refresh');\n+    res.send('refresh-token route');\n });\n \n router.post('/logout', async(req, res, next) => {\n     res.send('Register');\n"
+                },
+                {
+                    "date": 1724714855476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,8 @@\n     res.send('refresh-token route');\n });\n \n router.post('/logout', async(req, res, next) => {\n-    res.send('Register');\n+    res.send('log');\n });\n \n module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724714879655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n router.post('/refresh-token', async(req, res, next) => {\n     res.send('refresh-token route');\n });\n \n-router.post('/logout', async(req, res, next) => {\n-    res.send('log');\n+router.delete('/logout', async(req, res, next) => {\n+    res.send('logout route');\n });\n \n module.exports = router;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724740613296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n const express = require('express');\n const router = express.Router();\n \n router.post('/register', async(req, res, next) => {\n+    \n     res.send('Register route');\n });\n \n router.post('/login', async(req, res, next) => {\n"
+                },
+                {
+                    "date": 1724740631070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require('express');\n const router = express.Router();\n \n router.post('/register', async(req, res, next) => {\n-    \n+    res.body)\n     res.send('Register route');\n });\n \n router.post('/login', async(req, res, next) => {\n"
+                },
+                {
+                    "date": 1724740637411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require('express');\n const router = express.Router();\n \n router.post('/register', async(req, res, next) => {\n-    cons(res.body)\n+    console(res.body)\n     res.send('Register route');\n });\n \n router.post('/login', async(req, res, next) => {\n"
+                },
+                {
+                    "date": 1724741884514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n         if (!email || !password) throw createError.BadRequest();\n         const doesExist = await User.findone({ email });\n         if (doesExist) throw createError.Conflict(`${email} is already been registered`);\n \n-        const\n+        const \n \n     } catch(err) {\n         next(err);\n     }\n"
+                }
+            ],
+            "date": 1724714598768,
+            "name": "Commit-0",
+            "content": "const "
+        }
+    ]
+}

@@ -1,0 +1,278 @@
+{
+    "sourceFile": "app.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 65,
+            "patches": [
+                {
+                    "date": 1724712982223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724712989730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const \n\\ No newline at end of file\n+const express = require('express');\n"
+                },
+                {
+                    "date": 1724712996662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n const express = require('express');\n+const morgan\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713006205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n const express = require('express');\n-const morgan\n\\ No newline at end of file\n+const morgan = require('morgan');\n+const create\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713019694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const express = require('express');\n const morgan = require('morgan');\n-const create\n\\ No newline at end of file\n+const createError = require('http-errors');\\\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713129590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n const express = require('express');\n const morgan = require('morgan');\n-const createError = require('http-errors');\\\n\\ No newline at end of file\n+const createError = require('http-errors');\n+re\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713185074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n const express = require('express');\n const morgan = require('morgan');\n const createError = require('http-errors');\n-re\n\\ No newline at end of file\n+require('dotenv').config();\n+\n+const app = express();\n"
+                },
+                {
+                    "date": 1724713200065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,6 @@\n const createError = require('http-errors');\n require('dotenv').config();\n \n const app = express();\n+\n+const PORT = process.env.PORT || 3000;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713220536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,7 @@\n require('dotenv').config();\n \n const app = express();\n \n-const PORT = process.env.PORT || 3000;\n\\ No newline at end of file\n+const PORT = process.env.PORT || 3000;\n+\n+app\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713227034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n const app = express();\n \n const PORT = process.env.PORT || 3000;\n \n-app\n\\ No newline at end of file\n+app.listen(PORT, () => {\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713234525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,6 @@\n const app = express();\n \n const PORT = process.env.PORT || 3000;\n \n-app.listen(PORT, () => {\n\\ No newline at end of file\n+app.listen(PORT, () => {\n+    cons\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713240538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,5 @@\n \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n-    cons\n\\ No newline at end of file\n+    console.log(`Server is running on port ${PORT}`);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713254074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,6 @@\n \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n-    console.log(`Server is running on port ${PORT}`);\n\\ No newline at end of file\n+    console.log(`Server is running on port ${PORT}`);\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713553544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n require('dotenv').config();\n \n const app = express();\n \n+\n+\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n\\ No newline at end of file\n     console.log(`Server is running on port ${PORT}`);\n-})\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724713558834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n require('dotenv').config();\n \n const app = express();\n \n+app.get\n \n-\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713564025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n require('dotenv').config();\n \n const app = express();\n \n-app.get\n+app.get('/', (req, res\n \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n"
+                },
+                {
+                    "date": 1724713588907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n require('dotenv').config();\n \n const app = express();\n \n-app.get('/', (req, res\n+app.get('/', as(req, res, next) \n \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n"
+                },
+                {
+                    "date": 1724713594277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n require('dotenv').config();\n \n const app = express();\n \n-app.get('/', as(req, res, next) \n+app.get('/', async(req, res, next)  \n \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n"
+                },
+                {
+                    "date": 1724713611677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,11 @@\n require('dotenv').config();\n \n const app = express();\n \n-app.get('/', async(req, res, next)  \n+app.get('/', async(req, res, next) => {\n \n+}\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713618377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n \n const app = express();\n \n app.get('/', async(req, res, next) => {\n-\n-}\n+    \n+});\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713640270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n const app = express();\n \n app.get('/', async(req, res, next) => {\n-    \n+    res\n });\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n"
+                },
+                {
+                    "date": 1724713653972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,11 @@\n \n const app = express();\n \n app.get('/', async(req, res, next) => {\n-    res\n+    res.send('Hello World');\n });\n+\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713751094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n+\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713757777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n-\n+app.use(async(req, res, next) => {\n+    \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713769859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     res.send('Hello World');\n });\n \n app.use(async(req, res, next) => {\n-    \n+    const \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713776801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     res.send('Hello World');\n });\n \n app.use(async(req, res, next) => {\n-    const \n+    const err\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713783515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     res.send('Hello World');\n });\n \n app.use(async(req, res, next) => {\n-    const err\n+    const error = \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713790713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     res.send('Hello World');\n });\n \n app.use(async(req, res, next) => {\n-    const error = \n+    const error = new Err\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713797242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n     res.send('Hello World');\n });\n \n app.use(async(req, res, next) => {\n-    const error = new Err\n+    const error = new Error('Not Found');\n+    error.status = 404;\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713810234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n \n app.use(async(req, res, next) => {\n     const error = new Error('Not Found');\n     error.status = 404;\n+    next(error);\n+\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713820671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n     const error = new Error('Not Found');\n     error.status = 404;\n     next(error);\n \n+\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724713827972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n app.use(async(req, res, next) => {\n     const error = new Error('Not Found');\n     error.status = 404;\n     next(error);\n+})\n \n-\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724714058220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,12 @@\n app.use(async(req, res, next) => {\n     const error = new Error('Not Found');\n     error.status = 404;\n     next(error);\n-})\n+});\n \n+app\n+\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724714066226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     error.status = 404;\n     next(error);\n });\n \n-app\n+app.use()\n \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n"
+                },
+                {
+                    "date": 1724714080637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,18 @@\n     error.status = 404;\n     next(error);\n });\n \n-app.use()\n+app.use(error, req, res, next) => {\n+    res.status(error.status || 500);\n+    res.send({\n+        error: {\n+            status: error.status || 500,\n+            message: error.message\n+        }\n+    });\n \n+\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724714106318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,18 +14,18 @@\n     error.status = 404;\n     next(error);\n });\n \n-app.use(error, req, res, next) => {\n+app.use(err, req, res, next) => {\n     res.status(error.status || 500);\n     res.send({\n         error: {\n             status: error.status || 500,\n             message: error.message\n         }\n     });\n+};\n \n-\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n"
+                },
+                {
+                    "date": 1724714115519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n     next(error);\n });\n \n app.use(err, req, res, next) => {\n-    res.status(error.status || 500);\n+    res.status(err.status || 500);\n     res.send({\n         error: {\n-            status: error.status || 500,\n+            status: err.status || 500,\n             message: error.message\n         }\n     });\n };\n"
+                },
+                {
+                    "date": 1724714145413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     error.status = 404;\n     next(error);\n });\n \n-app.use(err, req, res, next) => {\n+app.use((err, req, res, next) => {\n     res.status(err.status || 500);\n     res.send({\n         error: {\n             status: err.status || 500,\n"
+                },
+                {
+                    "date": 1724714161561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             status: err.status || 500,\n             message: error.message\n         }\n     });\n-};\n+});\n \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n"
+                },
+                {
+                    "date": 1724714169965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             status: err.status || 500,\n             message: error.message\n         }\n     });\n-});\n+};\n \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n"
+                },
+                {
+                    "date": 1724714183152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             status: err.status || 500,\n             message: error.message\n         }\n     });\n-};\n+});\n \n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n"
+                },
+                {
+                    "date": 1724714193953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n     res.send('Hello World');\n });\n \n app.use(async(req, res, next) => {\n-    const error = new Error('Not Found');\n-    error.status = 404;\n-    next(error);\n+    // const error = new Error('Not Found');\n+    // error.status = 404;\n+    // next(error);\n });\n \n app.use((err, req, res, next) => {\n     res.status(err.status || 500);\n"
+                },
+                {
+                    "date": 1724714203038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n app.use(async(req, res, next) => {\n     // const error = new Error('Not Found');\n     // error.status = 404;\n     // next(error);\n+    next\n });\n \n app.use((err, req, res, next) => {\n     res.status(err.status || 500);\n"
+                },
+                {
+                    "date": 1724714213575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n app.use(async(req, res, next) => {\n     // const error = new Error('Not Found');\n     // error.status = 404;\n     // next(error);\n-    next\n+    next(createError.NotFound(.));\n });\n \n app.use((err, req, res, next) => {\n     res.status(err.status || 500);\n"
+                },
+                {
+                    "date": 1724714220766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n app.use(async(req, res, next) => {\n     // const error = new Error('Not Found');\n     // error.status = 404;\n     // next(error);\n-    next(createError.NotFound(.));\n+    next(createError.NotFound('This route does not exist'));\n });\n \n app.use((err, req, res, next) => {\n     res.status(err.status || 500);\n"
+                },
+                {
+                    "date": 1724714414335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     res.status(err.status || 500);\n     res.send({\n         error: {\n             status: err.status || 500,\n-            message: error.message\n+            message: err.message\n         }\n     });\n });\n \n"
+                },
+                {
+                    "date": 1724714431882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n app.use(async(req, res, next) => {\n     // const error = new Error('Not Found');\n     // error.status = 404;\n     // next(error);\n-    next(createError.NotFound('This route does not exist'));\n+    next(createError.NotFound(''));\n });\n \n app.use((err, req, res, next) => {\n     res.status(err.status || 500);\n"
+                },
+                {
+                    "date": 1724714439563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n app.use(async(req, res, next) => {\n     // const error = new Error('Not Found');\n     // error.status = 404;\n     // next(error);\n-    next(createError.NotFound(''));\n+    next(createError.NotFound());\n });\n \n app.use((err, req, res, next) => {\n     res.status(err.status || 500);\n"
+                },
+                {
+                    "date": 1724715031086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n const morgan = require('morgan');\n const createError = require('http-errors');\n require('dotenv').config();\n \n+\n+\n const app = express();\n \n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n"
+                },
+                {
+                    "date": 1724715038557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n const morgan = require('morgan');\n const createError = require('http-errors');\n require('dotenv').config();\n \n+const AuthRoute = require('./Routes/Auth.route');\n \n-\n const app = express();\n \n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n"
+                },
+                {
+                    "date": 1724715096379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,10 @@\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n+app\n+\n app.use(async(req, res, next) => {\n     // const error = new Error('Not Found');\n     // error.status = 404;\n     // next(error);\n"
+                },
+                {
+                    "date": 1724715108918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n-app\n+app.use(\"\"\n \n app.use(async(req, res, next) => {\n     // const error = new Error('Not Found');\n     // error.status = 404;\n"
+                },
+                {
+                    "date": 1724715115202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n-app.use(\"\"\n+app.use('/auth', AuthRoute);\n \n app.use(async(req, res, next) => {\n     // const error = new Error('Not Found');\n     // error.status = 404;\n"
+                },
+                {
+                    "date": 1724715778760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,10 @@\n const AuthRoute = require('./Routes/Auth.route');\n \n const app = express();\n \n+\n+\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n"
+                },
+                {
+                    "date": 1724715784424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n const AuthRoute = require('./Routes/Auth.route');\n \n const app = express();\n \n+app\n \n-\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n"
+                },
+                {
+                    "date": 1724715790280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const AuthRoute = require('./Routes/Auth.route');\n \n const app = express();\n \n-app\n+app.use(morgan('dev'));\n \n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n"
+                },
+                {
+                    "date": 1724739388599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n require('dotenv').config();\n \n const AuthRoute = require('./Routes/Auth.route');\n \n+\n const app = express();\n \n app.use(morgan('dev'));\n \n"
+                },
+                {
+                    "date": 1724739395338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n require('dotenv').config();\n \n const AuthRoute = require('./Routes/Auth.route');\n \n-\n const app = express();\n \n app.use(morgan('dev'));\n \n"
+                },
+                {
+                    "date": 1724739400995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require('express');\n const morgan = require('morgan');\n const createError = require('http-errors');\n require('dotenv').config();\n-\n+require('./helpers/init_mongodb');\n const AuthRoute = require('./Routes/Auth.route');\n \n const app = express();\n \n"
+                },
+                {
+                    "date": 1724739457397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require('express');\n const morgan = require('morgan');\n const createError = require('http-errors');\n require('dotenv').config();\n-require('./helpers/init_mongodb');\n+require('./');\n const AuthRoute = require('./Routes/Auth.route');\n \n const app = express();\n \n"
+                },
+                {
+                    "date": 1724739467167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require('express');\n const morgan = require('morgan');\n const createError = require('http-errors');\n require('dotenv').config();\n-require('./');\n+require('../');\n const AuthRoute = require('./Routes/Auth.route');\n \n const app = express();\n \n"
+                },
+                {
+                    "date": 1724739472952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require('express');\n const morgan = require('morgan');\n const createError = require('http-errors');\n require('dotenv').config();\n-require('../');\n+require('');\n const AuthRoute = require('./Routes/Auth.route');\n \n const app = express();\n \n"
+                },
+                {
+                    "date": 1724739491979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const express = require('express');\n const morgan = require('morgan');\n const createError = require('http-errors');\n require('dotenv').config();\n-require('');\n+require('./helpers/init_mongodb');\n const AuthRoute = require('./Routes/Auth.route');\n \n const app = express();\n \n"
+                },
+                {
+                    "date": 1724740722909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n const app = express();\n \n app.use(morgan('dev'));\n \n+\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n"
+                },
+                {
+                    "date": 1724740729388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n \n const app = express();\n \n app.use(morgan('dev'));\n+app.use(express.json());\n \n \n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n"
+                },
+                {
+                    "date": 1724740734776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n const app = express();\n \n app.use(morgan('dev'));\n app.use(express.json());\n+app.use()\n \n-\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n"
+                }
+            ],
+            "date": 1724712982223,
+            "name": "Commit-0",
+            "content": "const "
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "sourceFile": "helpers/validation_schema.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1724743298915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724743325539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,44 +0,0 @@\n-const Joi = require('joi');\n-\n-const schema = Joi.object({\n-    username: Joi.string()\n-        .alphanum()\n-        .min(3)\n-        .max(30)\n-        .required(),\n-\n-    password: Joi.string()\n-        .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),\n-\n-    repeat_password: Joi.ref('password'),\n-\n-    access_token: [\n-        Joi.string(),\n-        Joi.number()\n-    ],\n-\n-    birth_year: Joi.number()\n-        .integer()\n-        .min(1900)\n-        .max(2013),\n-\n-    email: Joi.string()\n-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })\n-})\n-    .with('username', 'birth_year')\n-    .xor('password', 'access_token')\n-    .with('password', 'repeat_password');\n-\n-\n-schema.validate({ username: 'abc', birth_year: 1994 });\n-// -> { value: { username: 'abc', birth_year: 1994 } }\n-\n-schema.validate({});\n-// -> { value: {}, error: '\"username\" is required' }\n-\n-// Also -\n-\n-try {\n-    const value = await schema.validateAsync({ username: 'abc', birth_year: 1994 });\n-}\n-catch (err) { }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743338559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,12 @@\n+const Joi = require('joi');\n \n+const schema = Joi.object({\n+    username: Joi.string()\n+        .alphanum()\n+        .min(3)\n+        .max(30)\n+        .required(),\n+\n+    password: Joi.string()\n+        .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),\n+\n"
+                },
+                {
+                    "date": 1724743349224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,4 @@\n const Joi = require('joi');\n \n const schema = Joi.object({\n-    username: Joi.string()\n-        .alphanum()\n-        .min(3)\n-        .max(30)\n-        .required(),\n-\n-    password: Joi.string()\n-        .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),\n-\n+    email\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743358598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const Joi = require('joi');\n \n const schema = Joi.object({\n-    email\n\\ No newline at end of file\n+    email: \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743364562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const Joi = require('joi');\n \n const schema = Joi.object({\n-    email: \n\\ No newline at end of file\n+    email: Joi.string().email().lowercase().required(),\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743369959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n const Joi = require('joi');\n \n const schema = Joi.object({\n-    email: Joi.string().email().lowercase().required(),\n\\ No newline at end of file\n+    email: Joi.string().email().lowercase().required(),\n+    pass\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743380859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n const Joi = require('joi');\n \n const schema = Joi.object({\n     email: Joi.string().email().lowercase().required(),\n-    pass\n\\ No newline at end of file\n+    password: Joi.string().min(2).required(),\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743387985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n const Joi = require('joi');\n \n const schema = Joi.object({\n     email: Joi.string().email().lowercase().required(),\n-    password: Joi.string().min(2).required(),\n\\ No newline at end of file\n+    password: Joi.string().min(2).required()\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743393220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n const Joi = require('joi');\n \n const schema = Joi.object({\n     email: Joi.string().email().lowercase().required(),\n-    password: Joi.string().min(2).required()\n\\ No newline at end of file\n+    password: Joi.string().min(2).required(),\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743436137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const Joi = require('joi');\n \n-const schema = Joi.object({\n+const authschema = Joi.object({\n     email: Joi.string().email().lowercase().required(),\n     password: Joi.string().min(2).required(),\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743449062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,7 @@\n \n const authschema = Joi.object({\n     email: Joi.string().email().lowercase().required(),\n     password: Joi.string().min(2).required(),\n-});\n\\ No newline at end of file\n+});\n+\n+module.exports = {\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724743456409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,7 @@\n     email: Joi.string().email().lowercase().required(),\n     password: Joi.string().min(2).required(),\n });\n \n-module.exports = {\n\\ No newline at end of file\n+module.exports = {\n+    authschema,\n+};\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1724743298915,
+            "name": "Commit-0",
+            "content": "const Joi = require('joi');\n\nconst schema = Joi.object({\n    username: Joi.string()\n        .alphanum()\n        .min(3)\n        .max(30)\n        .required(),\n\n    password: Joi.string()\n        .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),\n\n    repeat_password: Joi.ref('password'),\n\n    access_token: [\n        Joi.string(),\n        Joi.number()\n    ],\n\n    birth_year: Joi.number()\n        .integer()\n        .min(1900)\n        .max(2013),\n\n    email: Joi.string()\n        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })\n})\n    .with('username', 'birth_year')\n    .xor('password', 'access_token')\n    .with('password', 'repeat_password');\n\n\nschema.validate({ username: 'abc', birth_year: 1994 });\n// -> { value: { username: 'abc', birth_year: 1994 } }\n\nschema.validate({});\n// -> { value: {}, error: '\"username\" is required' }\n\n// Also -\n\ntry {\n    const value = await schema.validateAsync({ username: 'abc', birth_year: 1994 });\n}\ncatch (err) { }\n"
+        }
+    ]
+}

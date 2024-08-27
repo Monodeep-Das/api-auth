@@ -1,0 +1,22 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1724712519341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724712528550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"auth backend\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"start\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n+    \"start\": \"nodemon app.js\"\n   },\n   \"author\": \"\",\n   \"license\": \"ISC\",\n   \"dependencies\": {\n"
+                }
+            ],
+            "date": 1724712519340,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"api-auth\",\n  \"version\": \"1.0.0\",\n  \"description\": \"auth backend\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"start\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"dotenv\": \"^16.4.5\",\n    \"express\": \"^4.19.2\",\n    \"http-errors\": \"^2.0.0\",\n    \"morgan\": \"^1.10.0\",\n    \"nodemon\": \"^3.1.4\"\n  }\n}\n"
+        }
+    ]
+}

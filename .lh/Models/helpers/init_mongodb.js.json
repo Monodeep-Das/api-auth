@@ -1,0 +1,74 @@
+{
+    "sourceFile": "Models/helpers/init_mongodb.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1724739239731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724739247894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-const mongoose\n\\ No newline at end of file\n+const mongoose = require('mongoose');\n+\n+mongoose\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739254231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const mongoose = require('mongoose');\n \n-mongoose\n\\ No newline at end of file\n+mongoose.c\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739261719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const mongoose = require('mongoose');\n \n-mongoose.c\n\\ No newline at end of file\n+mongoose.connect('')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739267901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('')\n\\ No newline at end of file\n+mongoose.connect('mongodb://localhost:27017/')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739274870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('mongodb://localhost:27017/')\n\\ No newline at end of file\n+mongoose.connect('mongodb://localhost:27017')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739282220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('mongodb://localhost:27017')\n\\ No newline at end of file\n+mongoose.connect('mongodb://localhost:27017', {})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739289353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('mongodb://localhost:27017', {})\n\\ No newline at end of file\n+mongoose.connect('mongodb://localhost:27017', {dbName: 'auth'})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739294492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('mongodb://localhost:27017', {dbName: 'auth'})\n\\ No newline at end of file\n+mongoose.connect('mongodb://localhost:27017', {dbName: 'auth_'})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739304084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('mongodb://localhost:27017', {dbName: 'auth_'})\n\\ No newline at end of file\n+mongoose.connect('mongodb://localhost:27017', {dbName: 'auth_db', useNewUrlParser: true, useUnifiedTopology: true})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739327243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('mongodb://localhost:27017', {dbName: 'auth_db', useNewUrlParser: true, useUnifiedTopology: true})\n\\ No newline at end of file\n+mongoose.connect('mongodb://localhost:27017', {dbName: 'auth_db', useNewUrlParser: true, useUnifiedTopology: true})\n+.\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739333128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n const mongoose = require('mongoose');\n \n mongoose.connect('mongodb://localhost:27017', {dbName: 'auth_db', useNewUrlParser: true, useUnifiedTopology: true})\n-.\n\\ No newline at end of file\n+.then(() => {\n+    console.log('MongoDB connected');\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739340131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n \n mongoose.connect('mongodb://localhost:27017', {dbName: 'auth_db', useNewUrlParser: true, useUnifiedTopology: true})\n .then(() => {\n     console.log('MongoDB connected');\n-}\n\\ No newline at end of file\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739347180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,8 @@\n \n mongoose.connect('mongodb://localhost:27017', {dbName: 'auth_db', useNewUrlParser: true, useUnifiedTopology: true})\n .then(() => {\n     console.log('MongoDB connected');\n-})\n\\ No newline at end of file\n+})\n+.catch((err) => {\n+    console.log(err);\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739358771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n .then(() => {\n     console.log('MongoDB connected');\n })\n .catch((err) => {\n-    console.log(err);\n+    console.log(err.);\n });\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1724739239731,
+            "name": "Commit-0",
+            "content": "const mongoose"
+        }
+    ]
+}

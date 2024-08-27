@@ -1,0 +1,114 @@
+{
+    "sourceFile": "helpers/init_mongodb.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 24,
+            "patches": [
+                {
+                    "date": 1724739551870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724739557035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n const mongoose = require('mongoose');\n \n mongoose.connect('mongodb://localhost:27017', {\n-    dbName: 'auth_db', useNewUrlParser: true, useUnifiedTopology: true})\n+    dbName: 'auth_db', \n+    useNewUrlParser: true, \n+    useUnifiedTopology: true})\n .then(() => {\n     console.log('MongoDB connected');\n })\n .catch((err) => {\n"
+                },
+                {
+                    "date": 1724739564679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n mongoose.connect('mongodb://localhost:27017', {\n     dbName: 'auth_db', \n     useNewUrlParser: true, \n-    useUnifiedTopology: true})\n+    useUnifiedTopology: true\n+})\n .then(() => {\n     console.log('MongoDB connected');\n })\n .catch((err) => {\n"
+                },
+                {
+                    "date": 1724739577108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n mongoose.connect('mongodb://localhost:27017', {\n     dbName: 'auth_db', \n     useNewUrlParser: true, \n-    useUnifiedTopology: true\n+    useUnifiedTopology: true,\n+    \n })\n .then(() => {\n     console.log('MongoDB connected');\n })\n"
+                },
+                {
+                    "date": 1724739584072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n mongoose.connect('mongodb://localhost:27017', {\n     dbName: 'auth_db', \n     useNewUrlParser: true, \n     useUnifiedTopology: true,\n-    \n+    useFin\n })\n .then(() => {\n     console.log('MongoDB connected');\n })\n"
+                },
+                {
+                    "date": 1724739589953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n mongoose.connect('mongodb://localhost:27017', {\n     dbName: 'auth_db', \n     useNewUrlParser: true, \n     useUnifiedTopology: true,\n-    useFin\n+    useFindAndModify: false,\n+    \n })\n .then(() => {\n     console.log('MongoDB connected');\n })\n"
+                },
+                {
+                    "date": 1724739595842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     dbName: 'auth_db', \n     useNewUrlParser: true, \n     useUnifiedTopology: true,\n     useFindAndModify: false,\n-    \n+    use\n })\n .then(() => {\n     console.log('MongoDB connected');\n })\n"
+                },
+                {
+                    "date": 1724739601267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     dbName: 'auth_db', \n     useNewUrlParser: true, \n     useUnifiedTopology: true,\n     useFindAndModify: false,\n-    use\n+    useC\n })\n .then(() => {\n     console.log('MongoDB connected');\n })\n"
+                },
+                {
+                    "date": 1724739614791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     dbName: 'auth_db', \n     useNewUrlParser: true, \n     useUnifiedTopology: true,\n     useFindAndModify: false,\n-    useC\n+    useCreateIndex: true,\n })\n .then(() => {\n     console.log('MongoDB connected');\n })\n"
+                },
+                {
+                    "date": 1724739641401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n mongoose.connect('mongodb://localhost:27017', {\n     dbName: 'auth_db', \n     useNewUrlParser: true, \n     useUnifiedTopology: true,\n-    useFindAndModify: false,\n-    useCreateIndex: true,\n+    // useFindAndModify: false,\n+    // useCreateIndex: true,\n })\n .then(() => {\n     console.log('MongoDB connected');\n })\n"
+                },
+                {
+                    "date": 1724739703242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,9 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('mongodb://localhost:27017', {\n-    dbName: 'auth_db', \n-    useNewUrlParser: true, \n-    useUnifiedTopology: true,\n-    // useFindAndModify: false,\n-    // useCreateIndex: true,\n-})\n-.then(() => {\n+mongoose.connect('mongodb://localhost:27017/auth_db', {})\n+  .then(() => {\n     console.log('MongoDB connected');\n-})\n-.catch((err) => {\n\\ No newline at end of file\n+  })\n+  .catch((err) => {\n     console.log(err.message);\n-});\n+  });\n"
+                },
+                {
+                    "date": 1724739743424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,5 @@\n   })\n   .catch((err) => {\n     console.log(err.message);\n   });\n+\n"
+                },
+                {
+                    "date": 1724739754546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,4 +7,5 @@\n   .catch((err) => {\n     console.log(err.message);\n   });\n \n+mon\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739764949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,7 @@\n   .catch((err) => {\n     console.log(err.message);\n   });\n \n-mon\n\\ No newline at end of file\n+mongoose.connection.on('connected', () => {\n+    console.log('Mongoose connected to db');\n+    }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739783874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,5 @@\n   });\n \n mongoose.connection.on('connected', () => {\n     console.log('Mongoose connected to db');\n-    }\n\\ No newline at end of file\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739806572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,8 @@\n   });\n \n mongoose.connection.on('connected', () => {\n     console.log('Mongoose connected to db');\n-});\n\\ No newline at end of file\n+});\n+\n+mongoose.connection.on('error', (err) => {\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739812421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,6 @@\n     console.log('Mongoose connected to db');\n });\n \n mongoose.connection.on('error', (err) => {\n-    \n\\ No newline at end of file\n+    console.log(err.message);\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739848737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,8 @@\n });\n \n mongoose.connection.on('error', (err) => {\n     console.log(err.message);\n-});\n\\ No newline at end of file\n+});\n+\n+mongoose.connection.on('disconnected', () => {\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739854923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,6 @@\n     console.log(err.message);\n });\n \n mongoose.connection.on('disconnected', () => {\n-    \n\\ No newline at end of file\n+    console.log('Mongoose connection is disconnected');\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724739963316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,10 @@\n });\n \n mongoose.connection.on('disconnected', () => {\n     console.log('Mongoose connection is disconnected');\n-});\n\\ No newline at end of file\n+});\n+\n+process.on('SIGINT', async() => {\n+    await mongoose.connection.close();\n+    process.exit(0);\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724740092944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('mongodb://localhost:27017/auth_db', {})\n+mongoose.connect('process.', {})\n   .then(() => {\n     console.log('MongoDB connected');\n   })\n   .catch((err) => {\n@@ -22,5 +22,5 @@\n \n process.on('SIGINT', async() => {\n     await mongoose.connection.close();\n     process.exit(0);\n-}\n\\ No newline at end of file\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724740107503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('process.', {})\n+mongoose.connect('process.ENV, {})\n   .then(() => {\n     console.log('MongoDB connected');\n   })\n   .catch((err) => {\n"
+                },
+                {
+                    "date": 1724740117832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect('process.ENV, {})\n+mongoose.connect(process.ENV., {})\n   .then(() => {\n     console.log('MongoDB connected');\n   })\n   .catch((err) => {\n"
+                },
+                {
+                    "date": 1724740124599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const mongoose = require('mongoose');\n \n-mongoose.connect(process.ENV., {})\n+mongoose.connect('mongodb://localhost:27017/auth_db', {})\n   .then(() => {\n     console.log('MongoDB connected');\n   })\n   .catch((err) => {\n"
+                },
+                {
+                    "date": 1724740186792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n+require('dotenv').config();\n const mongoose = require('mongoose');\n \n-mongoose.connect('mongodb://localhost:27017/auth_db', {})\n+mongoose.connect(process.env.MONGODB_URI, {})\n   .then(() => {\n     console.log('MongoDB connected');\n   })\n   .catch((err) => {\n@@ -22,5 +23,5 @@\n \n process.on('SIGINT', async() => {\n     await mongoose.connection.close();\n     process.exit(0);\n-});\n\\ No newline at end of file\n+});\n"
+                }
+            ],
+            "date": 1724739551870,
+            "name": "Commit-0",
+            "content": "const mongoose = require('mongoose');\n\nmongoose.connect('mongodb://localhost:27017', {\n    dbName: 'auth_db', useNewUrlParser: true, useUnifiedTopology: true})\n.then(() => {\n    console.log('MongoDB connected');\n})\n.catch((err) => {\n    console.log(err.message);\n});"
+        }
+    ]
+}
