@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 80,
             "patches": [
                 {
                     "date": 1724853562370,
@@ -72,6 +72,262 @@
                 {
                     "date": 1724854737913,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n-  \"email\": \"muuunoooo@gmail.com\",\n+  \"email\": \"\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724854876983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n-  \"email\": \"\",\n+  \"email\": \"muuunoooo@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724855268222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,4 +4,5 @@\n {\n   \"email\": \"muuunoooo@gmail.com\",\n   \"password\": \"1234\"\n }\n+\n"
+                },
+                {
+                    "date": 1724855278497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,4 +5,11 @@\n   \"email\": \"muuunoooo@gmail.com\",\n   \"password\": \"1234\"\n }\n \n+POST http://localhost:3000/auth/login\n+Content-Type: application/json\n+\n+{\n+  \"email\": \"muuunoooo@gmail.com\",\n+  \"password\": \"1234\"\n+}\n"
+                },
+                {
+                    "date": 1724855285613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n-  \"email\": \"muuunoooo@gmail.com\",\n+  \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724855315986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   \"email\": \"muuunoooo@gmail.com\",\n   \"password\": \"1234\"\n }\n \n+\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n"
+                },
+                {
+                    "date": 1724855328513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   \"email\": \"muuunoooo@gmail.com\",\n   \"password\": \"1234\"\n }\n \n-\n+###\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n"
+                },
+                {
+                    "date": 1724855334562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n"
+                },
+                {
+                    "date": 1724855562118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-\n+###\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n@@ -11,7 +11,7 @@\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n-  \"email\": \"m.monodas@gmail.com\",\n+  \"email\": \"nupur@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724855568808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n-  \"email\": \"nupur@gmail.com\",\n+  \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724856125480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n-  \"email\": \"m.monodas@gmail.com\",\n+  \"email\": \"m.moas@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724856147453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n-  \"email\": \"m.moas@gmail.com\",\n+  \n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724856153006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n-  \n+  \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724856252505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n-  \"email\": \"m.monodas@gmail.com\",\n+  \"email\": \"m.@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724856261330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n-  \"email\": \"m.@gmail.com\",\n+  \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724856642724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n Content-Type: application/json\n \n {\n   \"email\": \"m.monodas@gmail.com\",\n-  \"password\": \"1234\"\n+  \"password\": \"12345\"\n }\n"
+                },
+                {
+                    "date": 1724856657281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n Content-Type: application/json\n \n {\n   \"email\": \"m.monodas@gmail.com\",\n-  \"password\": \"12345\"\n+  \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724856801711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n-  \"email\": \"muuunoooo@gmail.com\",\n+  \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n \n ###\n"
+                },
+                {
+                    "date": 1724856812571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n Content-Type: application/json\n \n {\n   \"email\": \"m.monodas@gmail.com\",\n-  \"password\": \"1234\"\n+  \"password\": \"12345\"\n }\n"
+                },
+                {
+                    "date": 1724857155558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n Content-Type: application/json\n \n {\n   \"email\": \"m.monodas@gmail.com\",\n-  \"password\": \"12345\"\n+  \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724875943963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,4 +14,5 @@\n {\n   \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n+\n"
+                },
+                {
+                    "date": 1724875951003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,4 +15,6 @@\n   \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n \n+###\n+ http://localhost:3000/auth/login\n"
+                },
+                {
+                    "date": 1724875962724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,5 @@\n   \"password\": \"1234\"\n }\n \n ###\n- http://localhost:3000/auth/login\n+GET http://localhost:3000\n"
+                },
+                {
+                    "date": 1724876096133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,4 +17,5 @@\n }\n \n ###\n GET http://localhost:3000\n+\n"
+                },
+                {
+                    "date": 1724876103887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n }\n \n ###\n GET http://localhost:3000\n-\n+Authorization: \n"
+                },
+                {
+                    "date": 1724876126630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n \n-###\n+### login\n POST http://localhost:3000/auth/login\n Content-Type: application/json\n \n {\n@@ -17,5 +17,5 @@\n }\n \n ###\n GET http://localhost:3000\n-Authorization: \n+Authorization: Bearer\n"
+                },
+                {
+                    "date": 1724876133442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-###\n+### signup\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n"
+                },
+                {
+                    "date": 1724876296720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n   \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n \n-###\n+### \n GET http://localhost:3000\n-Authorization: Bearer\n+Authorization: Bearer \n"
+                },
+                {
+                    "date": 1724877092053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n }\n \n ### \n GET http://localhost:3000\n-Authorization: Bearer \n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzYyNjMsImV4cCI6MTcyNDg3OTg2MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.gqLeEB7Vl3OBjOrfqwTYgJHKo3qbghQkAWnU_OQQD3\n"
+                },
+                {
+                    "date": 1724877114048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n }\n \n ### \n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzYyNjMsImV4cCI6MTcyNDg3OTg2MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.gqLeEB7Vl3OBjOrfqwTYgJHKo3qbghQkAWnU_OQQD3\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzYyNjMsImV4cCI6MTcyNDg3OTg2MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.gqLeEB7Vl3OBjOrfqwTYgJHKo3qbghQkAWnU_OQQD3Q\n"
+                },
+                {
+                    "date": 1724877160640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-### signup\n+### \n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n@@ -15,7 +15,7 @@\n   \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n \n-### \n+###\n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzYyNjMsImV4cCI6MTcyNDg3OTg2MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.gqLeEB7Vl3OBjOrfqwTYgJHKo3qbghQkAWnU_OQQD3Q\n+Authorization: Bearer\n"
+                },
+                {
+                    "date": 1724877275285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-### \n+### signup\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n@@ -15,7 +15,7 @@\n   \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n \n-###\n+### \n GET http://localhost:3000\n-Authorization: Bearer\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzcyNjIsImV4cCI6MTcyNDg3NzI3NywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.TzgFhJDlS5RwHTAu82tV63sTzjdftp2pOzeCL26O0U0\n"
+                },
+                {
+                    "date": 1724877302310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n }\n \n ### \n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzcyNjIsImV4cCI6MTcyNDg3NzI3NywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.TzgFhJDlS5RwHTAu82tV63sTzjdftp2pOzeCL26O0U0\n+Authorization: Bearer e\n"
+                },
+                {
+                    "date": 1724877643816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n }\n \n ### \n GET http://localhost:3000\n-Authorization: Bearer e\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc2MzAsImV4cCI6MTcyNDg3NzY0NSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.L3nWOWfoqYNn0rnD2b66R6Q2Rp2wB5IIgGhRkmu2BdY\n"
+                },
+                {
+                    "date": 1724877713706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n }\n \n ### \n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc2MzAsImV4cCI6MTcyNDg3NzY0NSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.L3nWOWfoqYNn0rnD2b66R6Q2Rp2wB5IIgGhRkmu2BdY\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iDc\n"
+                },
+                {
+                    "date": 1724877772452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n }\n \n ### \n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iDc\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iD\n"
+                },
+                {
+                    "date": 1724877777669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n }\n \n ### \n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iD\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iDc\n"
+                },
+                {
+                    "date": 1724878711822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n-  \"email\": \"m.monodas@gmail.com\",\n+  \"email\": \"new@gmail.com\",\n   \"password\": \"1234\"\n }\n \n ### login\n"
+                },
+                {
+                    "date": 1724878798512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n-  \"email\": \"new@gmail.com\",\n+  \"email\": \"newuser1@gmail.com\",\n   \"password\": \"1234\"\n }\n \n ### login\n"
+                },
+                {
+                    "date": 1724879313566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,4 +18,8 @@\n \n ### \n GET http://localhost:3000\n Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iDc\n+\n+### login\n+POST http://localhost:3000/auth/login\n+Content-Type: application/json\n"
+                },
+                {
+                    "date": 1724879323286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,6 @@\n GET http://localhost:3000\n Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iDc\n \n ### login\n-POST http://localhost:3000/auth/login\n+POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n"
+                },
+                {
+                    "date": 1724879329973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,4 +22,5 @@\n \n ### login\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n+\n"
+                },
+                {
+                    "date": 1724879338502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,4 +23,5 @@\n ### login\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n \n+\n"
+                },
+                {
+                    "date": 1724879345162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,7 @@\n ### login\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n \n-\n+{\n+    refesh\n+}\n"
+                },
+                {
+                    "date": 1724879355786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n \n {\n-    refesh\n+    refeshToken\": \n }\n"
+                },
+                {
+                    "date": 1724879408976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n \n {\n-    refeshToken\": \n+    \"refeshToken\": eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzkzOTQsImV4cCI6MTc1NjQzNjk5NCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.9fFD5h7eRiHYEzKMub0mY-Ohl-cqg1ztfW2t7Jc5rDc\n }\n"
+                },
+                {
+                    "date": 1724879425034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n \n {\n-    \"refeshToken\": eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzkzOTQsImV4cCI6MTc1NjQzNjk5NCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.9fFD5h7eRiHYEzKMub0mY-Ohl-cqg1ztfW2t7Jc5rDc\n+    \"refeshToken\": eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzkzOTQsImV4cCI6MTc1NjQzNjk5NCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.9fFD5h7eRiHYEzKMub0mY-Ohl-cqg1ztfW2t7Jc5rDc\"\n }\n"
+                },
+                {
+                    "date": 1724879432991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n \n {\n-    \"refeshToken\": eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzkzOTQsImV4cCI6MTc1NjQzNjk5NCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.9fFD5h7eRiHYEzKMub0mY-Ohl-cqg1ztfW2t7Jc5rDc\"\n+    \"refeshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzkzOTQsImV4cCI6MTc1NjQzNjk5NCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.9fFD5h7eRiHYEzKMub0mY-Ohl-cqg1ztfW2t7Jc5rDc\"\n }\n"
+                },
+                {
+                    "date": 1724880406563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n \n-### \n+### GET\n GET http://localhost:3000\n Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iDc\n \n ### login\n"
+                },
+                {
+                    "date": 1724880578783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n ### GET\n GET http://localhost:3000\n Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iDc\n \n-### login\n+### refresh-token\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n \n {\n"
+                },
+                {
+                    "date": 1724880592634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n }\n \n ### GET\n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4Nzc3MDEsImV4cCI6MTcyNDg3NzcxNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.sxcdHe46mYRhy3-9QWb2GcYngV8SK64ctfcmmFk0iDc\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA1ODEsImV4cCI6MTcyNDg4MDU5NiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.Jhohd2bFhmkhMsafGcbPknGpAMMZpKXilowcO8bnSDM\n \n ### refresh-token\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n"
+                },
+                {
+                    "date": 1724880632991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n \n {\n-    \"refeshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4NzkzOTQsImV4cCI6MTc1NjQzNjk5NCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.9fFD5h7eRiHYEzKMub0mY-Ohl-cqg1ztfW2t7Jc5rDc\"\n+    \"refeshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA1ODEsImV4cCI6MTc1NjQzODE4MSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.UvXLB-JTAjDE9YYDgN-i1D67mkVDyqW9aLzR75N5ZYg\"\n }\n"
+                },
+                {
+                    "date": 1724880653262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n }\n \n ### GET\n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA1ODEsImV4cCI6MTcyNDg4MDU5NiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.Jhohd2bFhmkhMsafGcbPknGpAMMZpKXilowcO8bnSDM\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA2NDMsImV4cCI6MTcyNDg4MDY2OCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.CA1H0Hwjm632zC8ZxBWYmO7ZieCo5rcF5txxhhG6AYM\n \n ### refresh-token\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n"
+                },
+                {
+                    "date": 1724880673258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refesh-token\n Content-Type: application/json\n \n {\n-    \"refeshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA1ODEsImV4cCI6MTc1NjQzODE4MSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.UvXLB-JTAjDE9YYDgN-i1D67mkVDyqW9aLzR75N5ZYg\"\n+    \"refeshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA2NDMsImV4cCI6MTc1NjQzODI0MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.-3K5_E0BHINmCxPEhRKVcouqYgQ7XWLFsckiD_hIluw\"\n }\n"
+                },
+                {
+                    "date": 1724880703609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n GET http://localhost:3000\n Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA2NDMsImV4cCI6MTcyNDg4MDY2OCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.CA1H0Hwjm632zC8ZxBWYmO7ZieCo5rcF5txxhhG6AYM\n \n ### refresh-token\n-POST http://localhost:3000/auth/refesh-token\n+POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n \n {\n     \"refeshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA2NDMsImV4cCI6MTc1NjQzODI0MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.-3K5_E0BHINmCxPEhRKVcouqYgQ7XWLFsckiD_hIluw\"\n"
+                },
+                {
+                    "date": 1724880753963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n }\n \n ### GET\n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA2NDMsImV4cCI6MTcyNDg4MDY2OCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.CA1H0Hwjm632zC8ZxBWYmO7ZieCo5rcF5txxhhG6AYM\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA3MzgsImV4cCI6MTcyNDg4MDc2MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.MHMilSEjEAlOrWfxA6LWKWZpd2bpu_Fu_HHscFetmhY\n \n ### refresh-token\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n"
+                },
+                {
+                    "date": 1724880767807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n \n {\n-    \"refeshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA2NDMsImV4cCI6MTc1NjQzODI0MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.-3K5_E0BHINmCxPEhRKVcouqYgQ7XWLFsckiD_hIluw\"\n+    \"refeshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA3MzgsImV4cCI6MTc1NjQzODMzOCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.w2FHmNJnmTGOFx_hI5tRvZNDNaKo4wgeRMZLyFR4nlI\"\n }\n"
+                },
+                {
+                    "date": 1724881072215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n \n {\n-    \"refeshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA3MzgsImV4cCI6MTc1NjQzODMzOCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.w2FHmNJnmTGOFx_hI5tRvZNDNaKo4wgeRMZLyFR4nlI\"\n+    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA3MzgsImV4cCI6MTc1NjQzODMzOCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.w2FHmNJnmTGOFx_hI5tRvZNDNaKo4wgeRMZLyFR4nlI\"\n }\n"
+                },
+                {
+                    "date": 1724881093379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n }\n \n ### GET\n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA3MzgsImV4cCI6MTcyNDg4MDc2MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.MHMilSEjEAlOrWfxA6LWKWZpd2bpu_Fu_HHscFetmhY\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODEwNzMsImV4cCI6MTcyNDg4MTA5OCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.aa_lZfGTO6G3DbiZ736sZ9S-Oxvkfpnp5Mq4csE25bo\n \n ### refresh-token\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n"
+                },
+                {
+                    "date": 1724881107882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n \n {\n-    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODA3MzgsImV4cCI6MTc1NjQzODMzOCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.w2FHmNJnmTGOFx_hI5tRvZNDNaKo4wgeRMZLyFR4nlI\"\n+    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODEwNzMsImV4cCI6MTc1NjQzODY3MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.qWw49JSjexCxhKyXysu7C1E5F17BiW_v0HPxE7ldbzc\"\n }\n"
+                },
+                {
+                    "date": 1724881124223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n }\n \n ### GET\n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODEwNzMsImV4cCI6MTcyNDg4MTA5OCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.aa_lZfGTO6G3DbiZ736sZ9S-Oxvkfpnp5Mq4csE25bo\n+Authorization: Bearer \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExMDksImV4cCI6MTcyNDg4MTEzNCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.791BnXbiHm1RjrjeClGTTFwIyw8gvc2vCYHUupcYOHk\"\n \n ### refresh-token\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n"
+                },
+                {
+                    "date": 1724881143269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,13 +17,13 @@\n }\n \n ### GET\n GET http://localhost:3000\n-Authorization: Bearer \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExMDksImV4cCI6MTcyNDg4MTEzNCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.791BnXbiHm1RjrjeClGTTFwIyw8gvc2vCYHUupcYOHk\"\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExMDksImV4cCI6MTcyNDg4MTEzNCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.791BnXbiHm1RjrjeClGTTFwIyw8gvc2vCYHUupcYOHk\n \n ### refresh-token\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n \n {\n-    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODEwNzMsImV4cCI6MTc1NjQzODY3MywiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.qWw49JSjexCxhKyXysu7C1E5F17BiW_v0HPxE7ldbzc\"\n+    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExMDksImV4cCI6MTc1NjQzODcwOSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.r9AH-QgcqC6fTjZFoKoO1ghc9gYBDMLk3K7udazYJes\"\n }\n"
+                },
+                {
+                    "date": 1724881159260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n }\n \n ### GET\n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExMDksImV4cCI6MTcyNDg4MTEzNCwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.791BnXbiHm1RjrjeClGTTFwIyw8gvc2vCYHUupcYOHk\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExNDQsImV4cCI6MTcyNDg4MTE2OSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.JN93eSOni1Wp5EyyzfoMz5khFAdrJpd7ksxL-eHcob8\n \n ### refresh-token\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n"
+                },
+                {
+                    "date": 1724881201415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n }\n \n ### GET\n GET http://localhost:3000\n-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExNDQsImV4cCI6MTcyNDg4MTE2OSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.JN93eSOni1Wp5EyyzfoMz5khFAdrJpd7ksxL-eHcob8\n+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExOTEsImV4cCI6MTcyNDg4MTIyNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.16vOoEVtR9ibee_P_HsefcSzxnFlcDVvBTCih-c75FU\n \n ### refresh-token\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n"
+                },
+                {
+                    "date": 1724881214070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n POST http://localhost:3000/auth/refresh-token\n Content-Type: application/json\n \n {\n-    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExMDksImV4cCI6MTc1NjQzODcwOSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.r9AH-QgcqC6fTjZFoKoO1ghc9gYBDMLk3K7udazYJes\"\n+    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExOTEsImV4cCI6MTc1NjQzODc5MSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.YAMlGsdVkRa2rvYnn_bjaZcl58wD9mI1JyJYw529R1s\"\n }\n"
                 }
             ],
             "date": 1724853562370,

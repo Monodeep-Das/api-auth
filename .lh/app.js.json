@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 65,
+            "activePatchIndex": 78,
             "patches": [
                 {
                     "date": 1724712982223,
@@ -268,6 +268,58 @@
                 {
                     "date": 1724740734776,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n const app = express();\n \n app.use(morgan('dev'));\n app.use(express.json());\n+app.use()\n \n-\n app.get('/', async(req, res, next) => {\n     res.send('Hello World');\n });\n \n"
+                },
+                {
+                    "date": 1724876223378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,12 @@\n const app = express();\n \n app.use(morgan('dev'));\n app.use(express.json());\n-app.use()\n+app.use(express.urlencoded({ extended: true }));\n \n app.get('/', async(req, res, next) => {\n-    res.send('Hello World');\n+    res.send('Hello From ');\n });\n \n app.use('/auth', AuthRoute);\n \n"
+                },
+                {
+                    "date": 1724876340926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n app.get('/', async(req, res, next) => {\n-    res.send('Hello From ');\n+    console\n+    res.send('Hello From Express');\n });\n \n app.use('/auth', AuthRoute);\n \n"
+                },
+                {
+                    "date": 1724876348323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n app.get('/', async(req, res, next) => {\n-    console\n+    console.log['']\n     res.send('Hello From Express');\n });\n \n app.use('/auth', AuthRoute);\n"
+                },
+                {
+                    "date": 1724876355072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n app.get('/', async(req, res, next) => {\n-    console.log['']\n+    console.log['autho'];\n     res.send('Hello From Express');\n });\n \n app.use('/auth', AuthRoute);\n"
+                },
+                {
+                    "date": 1724876372598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n app.get('/', async(req, res, next) => {\n-    console.log['autho'];\n+    console.log(['authorization'];\n     res.send('Hello From Express');\n });\n \n app.use('/auth', AuthRoute);\n"
+                },
+                {
+                    "date": 1724876378260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n app.get('/', async(req, res, next) => {\n-    console.log(['authorization'];\n+    console.log(['authorization']);\n     res.send('Hello From Express');\n });\n \n app.use('/auth', AuthRoute);\n"
+                },
+                {
+                    "date": 1724876383579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n app.get('/', async(req, res, next) => {\n-    console.log(['authorization']);\n+    console.log(hea['authorization']);\n     res.send('Hello From Express');\n });\n \n app.use('/auth', AuthRoute);\n"
+                },
+                {
+                    "date": 1724876412140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n app.get('/', async(req, res, next) => {\n-    console.log(hea['authorization']);\n+    console.log(req.headers['authorization']);\n     res.send('Hello From Express');\n });\n \n app.use('/auth', AuthRoute);\n"
+                },
+                {
+                    "date": 1724876853450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n require('dotenv').config();\n require('./helpers/init_mongodb');\n const AuthRoute = require('./Routes/Auth.route');\n \n+\n const app = express();\n \n app.use(morgan('dev'));\n app.use(express.json());\n"
+                },
+                {
+                    "date": 1724876863291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n const createError = require('http-errors');\n require('dotenv').config();\n require('./helpers/init_mongodb');\n const AuthRoute = require('./Routes/Auth.route');\n+const { verifyAccessToken } = require('./helpers/jwt_helper');\n \n-\n const app = express();\n \n app.use(morgan('dev'));\n app.use(express.json());\n"
+                },
+                {
+                    "date": 1724876877780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n app.get('/', async(req, res, next) => {\n-    console.log(req.headers['authorization']);\n+\n     res.send('Hello From Express');\n });\n \n app.use('/auth', AuthRoute);\n"
+                },
+                {
+                    "date": 1724876885710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n app.use(morgan('dev'));\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n-app.get('/', async(req, res, next) => {\n+app.get('/',v async(req, res, next) => {\n \n     res.send('Hello From Express');\n });\n \n"
+                },
+                {
+                    "date": 1724876910553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n app.use(morgan('dev'));\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n-app.get('/',v async(req, res, next) => {\n+app.get('/', verifyAccessToken, async(req, res, next) => {\n \n     res.send('Hello From Express');\n });\n \n"
                 }
             ],
             "date": 1724712982223,

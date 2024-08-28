@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 53,
+            "activePatchIndex": 147,
             "patches": [
                 {
                     "date": 1724845320226,
@@ -220,6 +220,382 @@
                 {
                     "date": 1724854132124,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n-                audience: userId,\n+                audience: \n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                },
+                {
+                    "date": 1724857066147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,16 +6,17 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 \n             }\n-            const secret = 'some name secret'\n+            const secret = 'process.env.ACCESS_TOKEN_SECRET'\n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n-                audience: \n+                audience: userId,\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n-                if (err) reject(err)\n+                if (err) \n+                    reject(err)\n                 resolve(token)\n             })\n         })\n     },\n"
+                },
+                {
+                    "date": 1724857075792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n                 audience: userId,\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) \n-                    reject(err)\n+                    // reject(err)\n                 resolve(token)\n             })\n         })\n     },\n"
+                },
+                {
+                    "date": 1724857086807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) \n                     // reject(err)\n+                    console.log(err.message)\n                 resolve(token)\n             })\n         })\n     },\n"
+                },
+                {
+                    "date": 1724857096562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) \n                     // reject(err)\n                     console.log(err.message)\n+                    re\n                 resolve(token)\n             })\n         })\n     },\n"
+                },
+                {
+                    "date": 1724857101616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) \n                     // reject(err)\n                     console.log(err.message)\n-                    re\n+                    reject(craeteError.InternalServerError())\n                 resolve(token)\n             })\n         })\n     },\n"
+                },
+                {
+                    "date": 1724857115154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,8 @@\n                 audience: userId,\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) \n-                    // reject(err)\n                     console.log(err.message)\n                     reject(craeteError.InternalServerError())\n                 resolve(token)\n             })\n"
+                },
+                {
+                    "date": 1724857120275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,10 @@\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) \n                     console.log(err.message)\n+                    // reject(err)\n+\n                     reject(craeteError.InternalServerError())\n                 resolve(token)\n             })\n         })\n"
+                },
+                {
+                    "date": 1724857190451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,9 @@\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) \n                     console.log(err.message)\n-                    // reject(err)\n-\n+                    reject(err)\n                     reject(craeteError.InternalServerError())\n                 resolve(token)\n             })\n         })\n"
+                },
+                {
+                    "date": 1724857202551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n                 audience: userId,\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) \n-                    console.log(err.message)\n+                    // console.log(err.message)\n                     reject(err)\n                     reject(craeteError.InternalServerError())\n                 resolve(token)\n             })\n"
+                },
+                {
+                    "date": 1724857217573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n                 audience: userId,\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) \n-                    // console.log(err.message)\n-                    reject(err)\n+                    console.log(err.message)\n+                    // reject(err)\n                     reject(craeteError.InternalServerError())\n                 resolve(token)\n             })\n         })\n"
+                },
+                {
+                    "date": 1724857324380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,26 @@\n const JWT = require('jsonwebtoken');\n-const craeteError = require('http-errors');\n+const createError = require('http-errors');\n \n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                \n-            }\n-            const secret = 'process.env.ACCESS_TOKEN_SECRET'\n+                sub: userId // 'sub' is a common claim for user ID\n+            };\n+            const secret = process.env.ACCESS_TOKEN_SECRET; // Correctly access the environment variable\n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n                 audience: userId,\n-            }\n+            };\n+\n             JWT.sign(payload, secret, options, (err, token) => {\n-                if (err) \n-                    console.log(err.message)\n-                    // reject(err)\n-                    reject(craeteError.InternalServerError())\n-                resolve(token)\n-            })\n-        })\n+                if (err) {\n+                    console.log(err.message);\n+                    return reject(createError.InternalServerError('Failed to sign access token'));\n+                }\n+                resolve(token);\n+            });\n+        });\n     },\n-}                \n+};\n"
+                },
+                {
+                    "date": 1724857337427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) {\n                     console.log(err.message);\n-                    return reject(createError.InternalServerError('Failed to sign access token'));\n+                    return reject(createError.InternalServerError());\n                 }\n                 resolve(token);\n             });\n         });\n"
+                },
+                {
+                    "date": 1724857455208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                sub: userId // 'sub' is a common claim for user ID\n+                sub: userId \n             };\n             const secret = process.env.ACCESS_TOKEN_SECRET; // Correctly access the environment variable\n             const options = {\n                 expiresIn: '1h',\n"
+                },
+                {
+                    "date": 1724857461944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                sub: userId \n+                sub: userId // 'sub' is a common claim for user ID\n             };\n             const secret = process.env.ACCESS_TOKEN_SECRET; // Correctly access the environment variable\n             const options = {\n                 expiresIn: '1h',\n"
+                },
+                {
+                    "date": 1724857474233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                sub: userId // 'sub' is a common claim for user ID\n+                sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n             };\n             const secret = process.env.ACCESS_TOKEN_SECRET; // Correctly access the environment variable\n             const options = {\n                 expiresIn: '1h',\n"
+                },
+                {
+                    "date": 1724876471090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n             };\n-            const secret = process.env.ACCESS_TOKEN_SECRET; // Correctly access the environment variable\n+            const secret = process.env.ACCESS_TOKEN_SECRET; \n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n                 audience: userId,\n@@ -22,5 +22,6 @@\n                 resolve(token);\n             });\n         });\n     },\n+    \n };\n"
+                },
+                {
+                    "date": 1724876476795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,7 @@\n                 resolve(token);\n             });\n         });\n     },\n-    \n+    verifyAccessToken: (req, res, next) => {\n+        \n };\n"
+                },
+                {
+                    "date": 1724876508071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n             });\n         });\n     },\n     verifyAccessToken: (req, res, next) => {\n-        \n+        if\n };\n"
+                },
+                {
+                    "date": 1724876514269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,6 @@\n             });\n         });\n     },\n     verifyAccessToken: (req, res, next) => {\n-        if\n+        if (!req.headers['authorization']) return next\n };\n"
+                },
+                {
+                    "date": 1724876520422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,7 @@\n             });\n         });\n     },\n     verifyAccessToken: (req, res, next) => {\n-        if (!req.headers['authorization']) return next\n+        if (!req.headers['authorization']) return next(createError.Unauthorized());\n+        \n };\n"
+                },
+                {
+                    "date": 1724876553768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n         });\n     },\n     verifyAccessToken: (req, res, next) => {\n         if (!req.headers['authorization']) return next(createError.Unauthorized());\n-        \n+        c\n };\n"
+                },
+                {
+                    "date": 1724876568193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,8 @@\n         });\n     },\n     verifyAccessToken: (req, res, next) => {\n         if (!req.headers['authorization']) return next(createError.Unauthorized());\n-        c\n+        const authHeader = req.headers['authorization'];\n+        const bearerToken = authHeader.split(' ');\n+        \n };\n"
+                },
+                {
+                    "date": 1724876586601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,6 +26,8 @@\n     verifyAccessToken: (req, res, next) => {\n         if (!req.headers['authorization']) return next(createError.Unauthorized());\n         const authHeader = req.headers['authorization'];\n         const bearerToken = authHeader.split(' ');\n+        const token = bearerToken[1];\n+\n         \n };\n"
+                },
+                {
+                    "date": 1724876600207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,6 @@\n         const authHeader = req.headers['authorization'];\n         const bearerToken = authHeader.split(' ');\n         const token = bearerToken[1];\n \n-        \n+        JWT.verify(token\n };\n"
+                },
+                {
+                    "date": 1724876607258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,6 @@\n         const authHeader = req.headers['authorization'];\n         const bearerToken = authHeader.split(' ');\n         const token = bearerToken[1];\n \n-        JWT.verify(token\n+        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET\n };\n"
+                },
+                {
+                    "date": 1724876615602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,6 @@\n         const authHeader = req.headers['authorization'];\n         const bearerToken = authHeader.split(' ');\n         const token = bearerToken[1];\n \n-        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET\n+        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, \n };\n"
+                },
+                {
+                    "date": 1724876623731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,7 @@\n         const authHeader = req.headers['authorization'];\n         const bearerToken = authHeader.split(' ');\n         const token = bearerToken[1];\n \n-        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, \n+        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n+            \n };\n"
+                },
+                {
+                    "date": 1724876631607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,6 +29,7 @@\n         const bearerToken = authHeader.split(' ');\n         const token = bearerToken[1];\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n-            \n+            if (err) {\n+                const message \n };\n"
+                },
+                {
+                    "date": 1724876639819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n         const token = bearerToken[1];\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n-                const message \n+                \n };\n"
+                },
+                {
+                    "date": 1724876656424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n         const token = bearerToken[1];\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n-                \n+                next(createError.Unauthorized)\n };\n"
+                },
+                {
+                    "date": 1724876661873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n         const token = bearerToken[1];\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n-                next(createError.Unauthorized)\n+                next(createError.Unauthorized());\n };\n"
+                },
+                {
+                    "date": 1724876676409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,5 +31,6 @@\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n                 next(createError.Unauthorized());\n+        )\n };\n"
+                },
+                {
+                    "date": 1724876687891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,5 +32,6 @@\n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n                 next(createError.Unauthorized());\n         )\n+        \n };\n"
+                },
+                {
+                    "date": 1724876700772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,7 @@\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n                 next(createError.Unauthorized());\n-        )\n+                \n         \n };\n"
+                },
+                {
+                    "date": 1724876706136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,8 @@\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n                 next(createError.Unauthorized());\n-                \n+            }\n+            \n         \n };\n"
+                },
+                {
+                    "date": 1724876714469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,7 +32,7 @@\n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n                 next(createError.Unauthorized());\n             }\n-            \n+            re\n         \n };\n"
+                },
+                {
+                    "date": 1724876731473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,7 +32,8 @@\n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n                 next(createError.Unauthorized());\n             }\n-            re\n+            req.payload = payload;\n+            \n         \n };\n"
+                },
+                {
+                    "date": 1724876972031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,7 +33,6 @@\n             if (err) {\n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n-            \n-        \n-};\n+            next();\n+        };\n"
+                },
+                {
+                    "date": 1724876982289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,5 +34,6 @@\n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n-        };\n+        \n+};\n"
+                },
+                {
+                    "date": 1724876998488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,6 +34,6 @@\n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n-        \n+        }\n };\n"
+                },
+                {
+                    "date": 1724877010755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,6 +34,6 @@\n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n-        }\n+        };\n };\n"
+                },
+                {
+                    "date": 1724877027009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,6 +34,7 @@\n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n-        };\n+        });\n+    }\n };\n"
+                },
+                {
+                    "date": 1724877042725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,6 @@\n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n-        });\n-    }\n+        };\n };\n"
+                },
+                {
+                    "date": 1724877142176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n             };\n             const secret = process.env.ACCESS_TOKEN_SECRET; \n             const options = {\n-                expiresIn: '1h',\n+                expiresIn: '15',\n                 issuer: 'monopage.com',\n                 audience: userId,\n             };\n \n@@ -34,6 +34,7 @@\n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n-        };\n+        });\n+    }\n };\n"
+                },
+                {
+                    "date": 1724877494069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n             };\n             const secret = process.env.ACCESS_TOKEN_SECRET; \n             const options = {\n-                expiresIn: '15',\n+                expiresIn: '15s',\n                 issuer: 'monopage.com',\n                 audience: userId,\n             };\n \n@@ -30,8 +30,9 @@\n         const token = bearerToken[1];\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n+                \n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877510174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         const token = bearerToken[1];\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n-                \n+              \n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877516575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         const token = bearerToken[1];\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n-              \n+              if (err.name === 'JsonWebTokenError') {\n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877522171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n               if (err.name === 'JsonWebTokenError') {\n+                \n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877538611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n               if (err.name === 'JsonWebTokenError') {\n-                \n+                return next(createError.Unauthorized());\n                 next(createError.Unauthorized());\n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877547914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,10 @@\n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n               if (err.name === 'JsonWebTokenError') {\n                 return next(createError.Unauthorized());\n-                next(createError.Unauthorized());\n+              }\n+                \n             }\n             req.payload = payload;\n             next();\n         });\n"
+                },
+                {
+                    "date": 1724877565947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n               if (err.name === 'JsonWebTokenError') {\n                 return next(createError.Unauthorized());\n-              }\n+              } else\n                 \n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877571738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,45 @@\n+const JWT = require('jsonwebtoken');\n+const createError = require('http-errors');\n+\n+module.exports = {\n+    signAccessToken: (userId) => {\n+        return new Promise((resolve, reject) => {\n+            const payload = {\n+                sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n+            };\n+            const secret = process.env.ACCESS_TOKEN_SECRET; \n+            const options = {\n+                expiresIn: '15s',\n+                issuer: 'monopage.com',\n+                audience: userId,\n+            };\n+\n+            JWT.sign(payload, secret, options, (err, token) => {\n+                if (err) {\n+                    console.log(err.message);\n+                    return reject(createError.InternalServerError());\n+                }\n+                resolve(token);\n+            });\n+        });\n+    },\n+    verifyAccessToken: (req, res, next) => {\n+        if (!req.headers['authorization']) return next(createError.Unauthorized());\n+        const authHeader = req.headers['authorization'];\n+        const bearerToken = authHeader.split(' ');\n+        const token = bearerToken[1];\n+\n+        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n+            if (err) {\n+              if (err.name === 'JsonWebTokenError') {\n+                return next(createError.Unauthorized());\n+              } else {\n+                return next(createError.Unauthorized(err.message));\n+              \n+                \n+            }\n+            req.payload = payload;\n+            next();\n+        });\n+    }\n+};\n"
+                },
+                {
+                    "date": 1724877578585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,53 +33,10 @@\n             if (err) {\n               if (err.name === 'JsonWebTokenError') {\n                 return next(createError.Unauthorized());\n               } else {\n-                return next(createError.Unauthorized(err.message));\n-              \n-                \n-            }\n-            req.payload = payload;\n-            next();\n-        });\n-    }\n-};\n-const JWT = require('jsonwebtoken');\n-const createError = require('http-errors');\n-\n-module.exports = {\n-    signAccessToken: (userId) => {\n-        return new Promise((resolve, reject) => {\n-            const payload = {\n-                sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n-            };\n-            const secret = process.env.ACCESS_TOKEN_SECRET; \n-            const options = {\n-                expiresIn: '15s',\n-                issuer: 'monopage.com',\n-                audience: userId,\n-            };\n-\n-            JWT.sign(payload, secret, options, (err, token) => {\n-                if (err) {\n-                    console.log(err.message);\n-                    return reject(createError.InternalServerError());\n-                }\n-                resolve(token);\n-            });\n-        });\n-    },\n-    verifyAccessToken: (req, res, next) => {\n-        if (!req.headers['authorization']) return next(createError.Unauthorized());\n-        const authHeader = req.headers['authorization'];\n-        const bearerToken = authHeader.split(' ');\n-        const token = bearerToken[1];\n-\n-        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n-            if (err) {\n-              if (err.name === 'JsonWebTokenError') {\n                 return next(createError.Unauthorized());\n-              } else\n+              }\n                 \n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877597705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,8 @@\n                 return next(createError.Unauthorized());\n               } else {\n                 return next(createError.Unauthorized());\n               }\n-                \n             }\n             req.payload = payload;\n             next();\n         });\n"
+                },
+                {
+                    "date": 1724877687823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n             if (err) {\n               if (err.name === 'JsonWebTokenError') {\n                 return next(createError.Unauthorized());\n               } else {\n-                return next(createError.Unauthorized());\n+                return next(createError.Unauthorized(err.message));\n               }\n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877757708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n               if (err.name === 'JsonWebTokenError') {\n-                return next(createError.Unauthorized());\n+                return next(createError.Unauthorized(err));\n               } else {\n                 return next(createError.Unauthorized(err.message));\n               }\n             }\n"
+                },
+                {
+                    "date": 1724877765924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n               if (err.name === 'JsonWebTokenError') {\n-                return next(createError.Unauthorized(err));\n+                return next(createError.Unauthorized(err.message));\n               } else {\n                 return next(createError.Unauthorized(err.message));\n               }\n             }\n"
+                },
+                {
+                    "date": 1724877814326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n                 return next(createError.Unauthorized(err.message));\n               } else {\n                 return next(createError.Unauthorized(err.message));\n               }\n+              \n             }\n             req.payload = payload;\n             next();\n         });\n"
+                },
+                {
+                    "date": 1724877819910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n                 return next(createError.Unauthorized(err.message));\n               } else {\n                 return next(createError.Unauthorized(err.message));\n               }\n-              \n+              const error = createError.Unauthorized\n             }\n             req.payload = payload;\n             next();\n         });\n"
+                },
+                {
+                    "date": 1724877825184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n                 return next(createError.Unauthorized(err.message));\n               } else {\n                 return next(createError.Unauthorized(err.message));\n               }\n-              const error = createError.Unauthorized\n+              const name\n             }\n             req.payload = payload;\n             next();\n         });\n"
+                },
+                {
+                    "date": 1724877834247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n                 return next(createError.Unauthorized(err.message));\n               } else {\n                 return next(createError.Unauthorized(err.message));\n               }\n-              const name\n+              const name = err.name \n             }\n             req.payload = payload;\n             next();\n         });\n"
+                },
+                {
+                    "date": 1724877840794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n                 return next(createError.Unauthorized(err.message));\n               } else {\n                 return next(createError.Unauthorized(err.message));\n               }\n-              const name = err.name \n+              const name = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n             }\n             req.payload = payload;\n             next();\n         });\n"
+                },
+                {
+                    "date": 1724877860314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,9 @@\n               } else {\n                 return next(createError.Unauthorized(err.message));\n               }\n               const name = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n+              \n             }\n             req.payload = payload;\n             next();\n         });\n"
+                },
+                {
+                    "date": 1724877869527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n                 return next(createError.Unauthorized(err.message));\n               }\n               const name = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n               \n+\n             }\n             req.payload = payload;\n             next();\n         });\n"
+                },
+                {
+                    "date": 1724877879435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n               } else {\n                 return next(createError.Unauthorized(err.message));\n               }\n               const name = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n-              \n+              return next(createError[name](err.message));\n \n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877894462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,13 +30,13 @@\n         const token = bearerToken[1];\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n-              if (err.name === 'JsonWebTokenError') {\n-                return next(createError.Unauthorized(err.message));\n-              } else {\n-                return next(createError.Unauthorized(err.message));\n-              }\n+            //   if (err.name === 'JsonWebTokenError') {\n+            //     return next(createError.Unauthorized(err.message));\n+            //   } else {\n+            //     return next(createError.Unauthorized(err.message));\n+            //   }\n               const name = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n               return next(createError[name](err.message));\n \n             }\n"
+                },
+                {
+                    "date": 1724877952986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n             //   } else {\n             //     return next(createError.Unauthorized(err.message));\n             //   }\n               const name = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n-              return next(createError[name](err.message));\n+              return next(createError(err.message));\n \n             }\n             req.payload = payload;\n             next();\n"
+                },
+                {
+                    "date": 1724877959089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,47 @@\n+const JWT = require('jsonwebtoken');\n+const createError = require('http-errors');\n+\n+module.exports = {\n+    signAccessToken: (userId) => {\n+        return new Promise((resolve, reject) => {\n+            const payload = {\n+                sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n+            };\n+            const secret = process.env.ACCESS_TOKEN_SECRET; \n+            const options = {\n+                expiresIn: '15s',\n+                issuer: 'monopage.com',\n+                audience: userId,\n+            };\n+\n+            JWT.sign(payload, secret, options, (err, token) => {\n+                if (err) {\n+                    console.log(err.message);\n+                    return reject(createError.InternalServerError());\n+                }\n+                resolve(token);\n+            });\n+        });\n+    },\n+    verifyAccessToken: (req, res, next) => {\n+        if (!req.headers['authorization']) return next(createError.Unauthorized());\n+        const authHeader = req.headers['authorization'];\n+        const bearerToken = authHeader.split(' ');\n+        const token = bearerToken[1];\n+\n+        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n+            if (err) {\n+            //   if (err.name === 'JsonWebTokenError') {\n+            //     return next(createError.Unauthorized(err.message));\n+            //   } else {\n+            //     return next(createError.Unauthorized(err.message));\n+            //   }\n+              const name = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n+              return next(createError.Unauthorized(err.message));\n+\n+            }\n+            req.payload = payload;\n+            next();\n+        });\n+    }\n+};\n"
+                },
+                {
+                    "date": 1724878161412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,52 +43,6 @@\n             req.payload = payload;\n             next();\n         });\n     }\n+    \n };\n-const JWT = require('jsonwebtoken');\n-const createError = require('http-errors');\n-\n-module.exports = {\n-    signAccessToken: (userId) => {\n-        return new Promise((resolve, reject) => {\n-            const payload = {\n-                sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n-            };\n-            const secret = process.env.ACCESS_TOKEN_SECRET; \n-            const options = {\n-                expiresIn: '15s',\n-                issuer: 'monopage.com',\n-                audience: userId,\n-            };\n-\n-            JWT.sign(payload, secret, options, (err, token) => {\n-                if (err) {\n-                    console.log(err.message);\n-                    return reject(createError.InternalServerError());\n-                }\n-                resolve(token);\n-            });\n-        });\n-    },\n-    verifyAccessToken: (req, res, next) => {\n-        if (!req.headers['authorization']) return next(createError.Unauthorized());\n-        const authHeader = req.headers['authorization'];\n-        const bearerToken = authHeader.split(' ');\n-        const token = bearerToken[1];\n-\n-        JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n-            if (err) {\n-            //   if (err.name === 'JsonWebTokenError') {\n-            //     return next(createError.Unauthorized(err.message));\n-            //   } else {\n-            //     return next(createError.Unauthorized(err.message));\n-            //   }\n-              const name = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n-              return next(createError(err.message));\n-\n-            }\n-            req.payload = payload;\n-            next();\n-        });\n-    }\n-};\n"
+                },
+                {
+                    "date": 1724878168772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,7 +42,7 @@\n             }\n             req.payload = payload;\n             next();\n         });\n-    }\n+    },\n     \n };\n"
+                },
+                {
+                    "date": 1724878180675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,6 +43,6 @@\n             req.payload = payload;\n             next();\n         });\n     },\n-    \n+    signRefreshToken: \n };\n"
+                },
+                {
+                    "date": 1724878196817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,6 +43,27 @@\n             req.payload = payload;\n             next();\n         });\n     },\n-    signRefreshToken: \n+    \n+    signRefreshToken: (userId) => {\n+        return new Promise((resolve, reject) => {\n+            const payload = {\n+                sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n+            };\n+            const secret = process.env.ACCESS_TOKEN_SECRET; \n+            const options = {\n+                expiresIn: '15s',\n+                issuer: 'monopage.com',\n+                audience: userId,\n+            };\n+\n+            JWT.sign(payload, secret, options, (err, token) => {\n+                if (err) {\n+                    console.log(err.message);\n+                    return reject(createError.InternalServerError());\n+                }\n+                resolve(token);\n+            });\n+        });\n+    },\n };\n"
+                },
+                {
+                    "date": 1724878272886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,15 +43,15 @@\n             req.payload = payload;\n             next();\n         });\n     },\n-    \n+\n     signRefreshToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n             };\n-            const secret = process.env.ACCESS_TOKEN_SECRET; \n+            const secret = process.env._TOKEN_SECRET; \n             const options = {\n                 expiresIn: '15s',\n                 issuer: 'monopage.com',\n                 audience: userId,\n"
+                },
+                {
+                    "date": 1724878278510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n             };\n-            const secret = process.env._TOKEN_SECRET; \n+            const secret = process.env.REFRE_TOKEN_SECRET; \n             const options = {\n                 expiresIn: '15s',\n                 issuer: 'monopage.com',\n                 audience: userId,\n"
+                },
+                {
+                    "date": 1724878299143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n             };\n-            const secret = process.env.REFRE_TOKEN_SECRET; \n+            const secret = process.env.; \n             const options = {\n                 expiresIn: '15s',\n                 issuer: 'monopage.com',\n                 audience: userId,\n"
+                },
+                {
+                    "date": 1724878308851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,11 +49,11 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n             };\n-            const secret = process.env.; \n+            const secret = process.env.REFRESH_TOKEN_SECRET; \n             const options = {\n-                expiresIn: '15s',\n+                expiresIn: '1',\n                 issuer: 'monopage.com',\n                 audience: userId,\n             };\n \n"
+                },
+                {
+                    "date": 1724879594796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n                 sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n             };\n             const secret = process.env.REFRESH_TOKEN_SECRET; \n             const options = {\n-                expiresIn: '1',\n+                expiresIn: '1y',\n                 issuer: 'monopage.com',\n                 audience: userId,\n             };\n \n@@ -65,5 +65,6 @@\n                 resolve(token);\n             });\n         });\n     },\n+    \n };\n"
+                },
+                {
+                    "date": 1724879600698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,6 +65,6 @@\n                 resolve(token);\n             });\n         });\n     },\n-    \n+    verifyRefreshToken: \n };\n"
+                },
+                {
+                    "date": 1724879617894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,6 +65,7 @@\n                 resolve(token);\n             });\n         });\n     },\n-    verifyRefreshToken: \n+    verifyRefreshToken: (refreshToken) => {\n+        \n };\n"
+                },
+                {
+                    "date": 1724879625555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,6 +66,7 @@\n             });\n         });\n     },\n     verifyRefreshToken: (refreshToken) => {\n-        \n+        return new Promise((resolve, reject) => {\n+            \n };\n"
+                },
+                {
+                    "date": 1724879636532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,6 +67,6 @@\n         });\n     },\n     verifyRefreshToken: (refreshToken) => {\n         return new Promise((resolve, reject) => {\n-            \n+            JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err\n };\n"
+                },
+                {
+                    "date": 1724879650046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,6 +67,7 @@\n         });\n     },\n     verifyRefreshToken: (refreshToken) => {\n         return new Promise((resolve, reject) => {\n-            JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err\n+            JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, payload) => {\n+                if\n };\n"
+                },
+                {
+                    "date": 1724879655415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,6 +68,6 @@\n     },\n     verifyRefreshToken: (refreshToken) => {\n         return new Promise((resolve, reject) => {\n             JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, payload) => {\n-                if\n+                if (err) \n };\n"
+                },
+                {
+                    "date": 1724879662520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,6 +68,7 @@\n     },\n     verifyRefreshToken: (refreshToken) => {\n         return new Promise((resolve, reject) => {\n             JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, payload) => {\n-                if (err) \n+                if (err) return reject(createError.Unauthorized());\n+                \n };\n"
+                },
+                {
+                    "date": 1724879688472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,6 +69,7 @@\n     verifyRefreshToken: (refreshToken) => {\n         return new Promise((resolve, reject) => {\n             JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, payload) => {\n                 if (err) return reject(createError.Unauthorized());\n+                const userId = payload.sub;\n                 \n };\n"
+                },
+                {
+                    "date": 1724879694023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,7 +69,7 @@\n     verifyRefreshToken: (refreshToken) => {\n         return new Promise((resolve, reject) => {\n             JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, payload) => {\n                 if (err) return reject(createError.Unauthorized());\n-                const userId = payload.sub;\n+                const userId = payload.a;\n                 \n };\n"
+                },
+                {
+                    "date": 1724879701782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,7 +69,8 @@\n     verifyRefreshToken: (refreshToken) => {\n         return new Promise((resolve, reject) => {\n             JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, payload) => {\n                 if (err) return reject(createError.Unauthorized());\n-                const userId = payload.a;\n+                const userId = payload.aud;\n+                resolve(userId);\n                 \n };\n"
+                },
+                {
+                    "date": 1724879710047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,7 +70,8 @@\n         return new Promise((resolve, reject) => {\n             JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, payload) => {\n                 if (err) return reject(createError.Unauthorized());\n                 const userId = payload.aud;\n+                \n                 resolve(userId);\n                 \n };\n"
+                },
+                {
+                    "date": 1724879738017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,8 +70,9 @@\n         return new Promise((resolve, reject) => {\n             JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, payload) => {\n                 if (err) return reject(createError.Unauthorized());\n                 const userId = payload.aud;\n-                \n+\n                 resolve(userId);\n-                \n-};\n+                                \n+                });\n+                }\n"
+                },
+                {
+                    "date": 1724879746857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,8 @@\n         return new Promise((resolve, reject) => {\n             JWT.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, payload) => {\n                 if (err) return reject(createError.Unauthorized());\n                 const userId = payload.aud;\n-\n+                \n                 resolve(userId);\n-                                \n-                });\n-                }\n+                \n+};\n"
+                },
+                {
+                    "date": 1724879766140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,6 +72,8 @@\n                 if (err) return reject(createError.Unauthorized());\n                 const userId = payload.aud;\n                 \n                 resolve(userId);\n-                \n-};\n+                                \n+                });\n+                }\n+                };\n"
+                },
+                {
+                    "date": 1724879888524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,42 +4,37 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n+                sub: userId // 'sub' is a common claim for user ID; this 'sub' is the subject of the token\n             };\n-            const secret = process.env.ACCESS_TOKEN_SECRET; \n+            const secret = process.env.ACCESS_TOKEN_SECRET;\n             const options = {\n                 expiresIn: '15s',\n                 issuer: 'monopage.com',\n                 audience: userId,\n             };\n \n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) {\n-                    console.log(err.message);\n+                    console.error(err.message);\n                     return reject(createError.InternalServerError());\n                 }\n                 resolve(token);\n             });\n         });\n     },\n     verifyAccessToken: (req, res, next) => {\n         if (!req.headers['authorization']) return next(createError.Unauthorized());\n+        \n         const authHeader = req.headers['authorization'];\n         const bearerToken = authHeader.split(' ');\n         const token = bearerToken[1];\n \n         JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {\n             if (err) {\n-            //   if (err.name === 'JsonWebTokenError') {\n-            //     return next(createError.Unauthorized(err.message));\n-            //   } else {\n-            //     return next(createError.Unauthorized(err.message));\n-            //   }\n-              const name = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n-              return next(createError.Unauthorized(err.message));\n-\n+                const errorType = err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.name;\n+                return next(createError.Unauthorized(err.message));\n             }\n             req.payload = payload;\n             next();\n         });\n@@ -47,20 +42,20 @@\n \n     signRefreshToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                sub: userId // 'sub' is a common claim for user ID this sub is the subject of the token\n+                sub: userId // 'sub' is a common claim for user ID; this 'sub' is the subject of the token\n             };\n-            const secret = process.env.REFRESH_TOKEN_SECRET; \n+            const secret = process.env.REFRESH_TOKEN_SECRET;\n             const options = {\n                 expiresIn: '1y',\n                 issuer: 'monopage.com',\n                 audience: userId,\n             };\n \n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) {\n-                    console.log(err.message);\n+                    console.error(err.message);\n                     return reject(createError.InternalServerError());\n                 }\n                 resolve(token);\n             });\n@@ -72,8 +67,8 @@\n                 if (err) return reject(createError.Unauthorized());\n                 const userId = payload.aud;\n                 \n                 resolve(userId);\n-                                \n-                });\n-                }\n-                };\n+            });\n+        });\n+    }\n+};\n"
+                },
+                {
+                    "date": 1724880625099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 sub: userId // 'sub' is a common claim for user ID; this 'sub' is the subject of the token\n             };\n             const secret = process.env.ACCESS_TOKEN_SECRET;\n             const options = {\n-                expiresIn: '15s',\n+                expiresIn: '25s',\n                 issuer: 'monopage.com',\n                 audience: userId,\n             };\n \n"
+                },
+                {
+                    "date": 1724881184427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 sub: userId // 'sub' is a common claim for user ID; this 'sub' is the subject of the token\n             };\n             const secret = process.env.ACCESS_TOKEN_SECRET;\n             const options = {\n-                expiresIn: '25s',\n+                expiresIn: 's',\n                 issuer: 'monopage.com',\n                 audience: userId,\n             };\n \n"
                 }
             ],
             "date": 1724845320226,

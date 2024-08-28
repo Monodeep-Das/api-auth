@@ -1,7 +1,29 @@
+### signup
 POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-  "email": "",
+  "email": "newuser1@gmail.com",
   "password": "1234"
+}
+
+### login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "m.monodas@gmail.com",
+  "password": "1234"
+}
+
+### GET
+GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExOTEsImV4cCI6MTcyNDg4MTIyNiwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.16vOoEVtR9ibee_P_HsefcSzxnFlcDVvBTCih-c75FU
+
+### refresh-token
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmNmMzllM2MyMTU4MmIzNzcyMDY3NzUiLCJpYXQiOjE3MjQ4ODExOTEsImV4cCI6MTc1NjQzODc5MSwiYXVkIjoiNjZjZjM5ZTNjMjE1ODJiMzc3MjA2Nzc1IiwiaXNzIjoibW9ub3BhZ2UuY29tIn0.YAMlGsdVkRa2rvYnn_bjaZcl58wD9mI1JyJYw529R1s"
 }
