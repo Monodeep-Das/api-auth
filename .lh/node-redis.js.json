@@ -1,0 +1,18 @@
+{
+    "sourceFile": "node-redis.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1724885557611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1724885557611,
+            "name": "Commit-0",
+            "content": "// test-redis.js\nconst redis = require('redis');\n\nconst client = redis.createClient({\n    port: 6379,\n    host: '127.0.0.1'\n});\n\nclient.on('connect', () => {\n    console.log('Redis connected');\n});\n\nclient.on('ready', () => {\n    console.log('Redis ready to use');\n});\n\nclient.on('error', (err) => {\n    console.error('Redis error:', err.message);\n});\n\nclient.on('end', () => {\n    console.log('Redis disconnected');\n});\n\nclient.set('test_key', 'test_value', (err, reply) => {\n    if (err) console.error('Error setting key:', err.message);\n    console.log('Set key reply:', reply);\n    client.get('test_key', (err, reply) => {\n        if (err) console.error('Error getting key:', err.message);\n        console.log('Get key reply:', reply);\n        client.quit();\n    });\n});\n"
+        }
+    ]
+}

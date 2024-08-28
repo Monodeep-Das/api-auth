@@ -5,6 +5,13 @@ require('dotenv').config();
 require('./helpers/init_mongodb');
 const AuthRoute = require('./Routes/Auth.route');
 const { verifyAccessToken } = require('./helpers/jwt_helper');
+const client = require('./helpers/init_redis');
+
+// client.SET('foo', 'baa');
+// client.GET('foo', (err, value) => {
+//     if (err) console.log(err.message)
+//     console.log(value);
+// }); 
 
 const app = express();
 

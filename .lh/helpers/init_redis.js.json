@@ -1,0 +1,170 @@
+{
+    "sourceFile": "helpers/init_redis.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 38,
+            "patches": [
+                {
+                    "date": 1724882674850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724882688313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-const redis\n\\ No newline at end of file\n+const redis = require('redis');\n+const client = redis.createClient();\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882712765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n const redis = require('redis');\n-const client = redis.createClient();\n\\ No newline at end of file\n+\n+const client = redis.createClient({});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882744009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n const redis = require('redis');\n \n-const client = redis.createClient({});\n\\ No newline at end of file\n+const client = redis.createClient({\n+    port\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882750020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n const redis = require('redis');\n \n const client = redis.createClient({\n-    port\n+    port: 8010\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882756414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n const redis = require('redis');\n \n const client = redis.createClient({\n-    port: 8010\n+    port: 8081,\n+    \n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882777103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const redis = require('redis');\n \n const client = redis.createClient({\n     port: 8081,\n-    \n+    host: 127.0.0.1\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882809266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const redis = require('redis');\n \n const client = redis.createClient({\n     port: 8081,\n-    host: 127.0.0.1\n+    host: \"127.0.0.1\"\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882833703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,9 @@\n \n const client = redis.createClient({\n     port: 8081,\n     host: \"127.0.0.1\"\n+});\n+\n+client.on('connect', () => {\n+    console.log('Redis connected');\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882847058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,7 @@\n });\n \n client.on('connect', () => {\n     console.log('Redis connected');\n-});\n\\ No newline at end of file\n+});\n+\n+client.on\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882853719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n client.on('connect', () => {\n     console.log('Redis connected');\n });\n \n-client.on\n\\ No newline at end of file\n+client.on(error, (err) => {\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882863002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,7 @@\n client.on('connect', () => {\n     console.log('Redis connected');\n });\n \n-client.on(error, (err) => {\n\\ No newline at end of file\n+client.on(error, (err) => {\n+    console.log(err.message);\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882873997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,7 @@\n });\n \n client.on(error, (err) => {\n     console.log(err.message);\n-})\n\\ No newline at end of file\n+});\n+\n+client\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882883443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,7 @@\n client.on(error, (err) => {\n     console.log(err.message);\n });\n \n-client\n\\ No newline at end of file\n+client.on('ready', () => {\n+    console.log('Redis ready to use');\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882890919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,9 @@\n });\n \n client.on('ready', () => {\n     console.log('Redis ready to use');\n-}\n\\ No newline at end of file\n+});\n+\n+client.on('end', () => {\n+    console.log('Redis disconnected');\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882978474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,15 @@\n client.on('connect', () => {\n     console.log('Redis connected');\n });\n \n+client.on('ready', () => {\n+    console.log('Redis ready to use');\n+});\n client.on(error, (err) => {\n     console.log(err.message);\n });\n \n-client.on('ready', () => {\n-    console.log('Redis ready to use');\n-});\n \n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724882994328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,12 @@\n \n client.on('ready', () => {\n     console.log('Redis ready to use');\n });\n+\n client.on(error, (err) => {\n     console.log(err.message);\n });\n \n-\n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724883023715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,6 @@\n });\n \n client.on('end', () => {\n     console.log('Redis disconnected');\n-});\n\\ No newline at end of file\n+});\n+\n"
+                },
+                {
+                    "date": 1724883029340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,4 +20,7 @@\n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n+process.on('SIGINT', () => {\n+    client.quit();\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724883049918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,6 @@\n });\n \n process.on('SIGINT', () => {\n     client.quit();\n-});\n\\ No newline at end of file\n+});\n+\n"
+                },
+                {
+                    "date": 1724883191766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const redis = require('redis');\n+import redis from 'redis';\n \n const client = redis.createClient({\n     port: 8081,\n     host: \"127.0.0.1\"\n@@ -24,4 +24,5 @@\n process.on('SIGINT', () => {\n     client.quit();\n });\n \n+module.exports = client;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724883199883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import redis from 'redis';\n+const redis = require('redis');\n \n const client = redis.createClient({\n     port: 8081,\n     host: \"127.0.0.1\"\n"
+                },
+                {
+                    "date": 1724883242768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n client.on('ready', () => {\n     console.log('Redis ready to use');\n });\n \n-client.on(error, (err) => {\n+client.on('error', (err) => {\n     console.log(err.message);\n });\n \n client.on('end', () => {\n@@ -24,5 +24,5 @@\n process.on('SIGINT', () => {\n     client.quit();\n });\n \n-module.exports = client;\n\\ No newline at end of file\n+module.exports = client;\n"
+                },
+                {
+                    "date": 1724883451817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const redis = require('redis');\n \n const client = redis.createClient({\n-    port: 8081,\n+    port: ,\n     host: \"127.0.0.1\"\n });\n \n client.on('connect', () => {\n"
+                },
+                {
+                    "date": 1724883659309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n const redis = require('redis');\n \n const client = redis.createClient({\n-    port: ,\n+    port: 6379,\n     host: \"127.0.0.1\"\n });\n \n client.on('connect', () => {\n-    console.log('Redis connected');\n+    console.log('Redis connecte');\n });\n \n client.on('ready', () => {\n     console.log('Redis ready to use');\n"
+                },
+                {
+                    "date": 1724883666450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     host: \"127.0.0.1\"\n });\n \n client.on('connect', () => {\n-    console.log('Redis connecte');\n+    console.log('Redis connected');\n });\n \n client.on('ready', () => {\n     console.log('Redis ready to use');\n"
+                },
+                {
+                    "date": 1724884515250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,16 +13,35 @@\n     console.log('Redis ready to use');\n });\n \n client.on('error', (err) => {\n-    console.log(err.message);\n+    console.error('Redis error:', err.message);\n });\n \n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n process.on('SIGINT', () => {\n-    client.quit();\n+    console.log('SIGINT received: quitting Redis client...');\n+    client.quit(() => {\n+        console.log('Redis client disconnected');\n+        process.exit(0);\n+    });\n });\n \n-module.exports = client;\n+// Test the client with a simple operation\n+client.set('test_key', 'test_value', (err) => {\n+    if (err) {\n+        console.error('Error setting key:', err.message);\n+    } else {\n+        console.log('Key set successfully');\n+        client.get('test_key', (err, reply) => {\n+            if (err) {\n+                console.error('Error getting key:', err.message);\n+            } else {\n+                console.log('Key value:', reply);\n+            }\n+            client.quit();\n+        });\n+    }\n+});\n"
+                },
+                {
+                    "date": 1724884571941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n const redis = require('redis');\n \n+// Create and configure the Redis client\n const client = redis.createClient({\n     port: 6379,\n     host: \"127.0.0.1\"\n });\n \n+// Event handlers for Redis client\n client.on('connect', () => {\n     console.log('Redis connected');\n });\n \n@@ -20,17 +22,18 @@\n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n+// Handle process termination\n process.on('SIGINT', () => {\n     console.log('SIGINT received: quitting Redis client...');\n     client.quit(() => {\n         console.log('Redis client disconnected');\n         process.exit(0);\n     });\n });\n \n-// Test the client with a simple operation\n+// Example operation\n client.set('test_key', 'test_value', (err) => {\n     if (err) {\n         console.error('Error setting key:', err.message);\n     } else {\n@@ -40,8 +43,9 @@\n                 console.error('Error getting key:', err.message);\n             } else {\n                 console.log('Key value:', reply);\n             }\n+            // Ensure to quit the client only once all operations are done\n             client.quit();\n         });\n     }\n });\n"
+                },
+                {
+                    "date": 1724884649257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,11 @@\n const redis = require('redis');\n \n-// Create and configure the Redis client\n const client = redis.createClient({\n     port: 6379,\n-    host: \"127.0.0.1\"\n+    host: '127.0.0.1'\n });\n \n-// Event handlers for Redis client\n client.on('connect', () => {\n     console.log('Redis connected');\n });\n \n@@ -22,30 +20,29 @@\n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n+// Ensure proper usage of client\n+const performOperations = async () => {\n+    try {\n+        await client.set('test_key', 'test_value');\n+        console.log('Key set successfully');\n+        \n+        const value = await client.get('test_key');\n+        console.log('Key value:', value);\n+    } catch (err) {\n+        console.error('Error performing operations:', err.message);\n+    } finally {\n+        client.quit(); // Ensure quit is called after operations\n+    }\n+};\n+\n+performOperations();\n+\n // Handle process termination\n process.on('SIGINT', () => {\n     console.log('SIGINT received: quitting Redis client...');\n     client.quit(() => {\n         console.log('Redis client disconnected');\n         process.exit(0);\n     });\n });\n-\n-// Example operation\n-client.set('test_key', 'test_value', (err) => {\n-    if (err) {\n-        console.error('Error setting key:', err.message);\n-    } else {\n-        console.log('Key set successfully');\n-        client.get('test_key', (err, reply) => {\n-            if (err) {\n-                console.error('Error getting key:', err.message);\n-            } else {\n-                console.log('Key value:', reply);\n-            }\n-            // Ensure to quit the client only once all operations are done\n-            client.quit();\n-        });\n-    }\n-});\n"
+                },
+                {
+                    "date": 1724884685793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,48 +1,57 @@\n const redis = require('redis');\n \n+// Create and configure the Redis client\n const client = redis.createClient({\n     port: 6379,\n     host: '127.0.0.1'\n });\n \n-client.on('connect', () => {\n-    console.log('Redis connected');\n-});\n+client.on('connect', () => console.log('Redis connected'));\n+client.on('ready', () => console.log('Redis ready to use'));\n+client.on('error', (err) => console.error('Redis error:', err.message));\n+client.on('end', () => console.log('Redis disconnected'));\n \n-client.on('ready', () => {\n-    console.log('Redis ready to use');\n-});\n-\n-client.on('error', (err) => {\n-    console.error('Redis error:', err.message);\n-});\n-\n-client.on('end', () => {\n-    console.log('Redis disconnected');\n-});\n-\n-// Ensure proper usage of client\n+// Perform Redis operations\n const performOperations = async () => {\n     try {\n+        // Ensure client is ready\n+        if (client.status !== 'ready') {\n+            throw new Error('Redis client is not ready');\n+        }\n+\n         await client.set('test_key', 'test_value');\n         console.log('Key set successfully');\n-        \n+\n         const value = await client.get('test_key');\n         console.log('Key value:', value);\n     } catch (err) {\n         console.error('Error performing operations:', err.message);\n     } finally {\n-        client.quit(); // Ensure quit is called after operations\n+        if (client.status !== 'end') {\n+            client.quit((err) => {\n+                if (err) {\n+                    console.error('Error quitting Redis client:', err.message);\n+                } else {\n+                    console.log('Redis client disconnected');\n+                }\n+                process.exit(0);\n+            });\n+        }\n     }\n };\n \n+// Run operations\n performOperations();\n \n // Handle process termination\n process.on('SIGINT', () => {\n     console.log('SIGINT received: quitting Redis client...');\n-    client.quit(() => {\n-        console.log('Redis client disconnected');\n+    client.quit((err) => {\n+        if (err) {\n+            console.error('Error quitting Redis client:', err.message);\n+        } else {\n+            console.log('Redis client disconnected');\n+        }\n         process.exit(0);\n     });\n });\n"
+                },
+                {
+                    "date": 1724884702642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,57 +1,28 @@\n const redis = require('redis');\n \n-// Create and configure the Redis client\n const client = redis.createClient({\n     port: 6379,\n-    host: '127.0.0.1'\n+    host: \"127.0.0.1\"\n });\n \n-client.on('connect', () => console.log('Redis connected'));\n-client.on('ready', () => console.log('Redis ready to use'));\n-client.on('error', (err) => console.error('Redis error:', err.message));\n-client.on('end', () => console.log('Redis disconnected'));\n+client.on('connect', () => {\n+    console.log('Redis connected');\n+});\n \n-// Perform Redis operations\n-const performOperations = async () => {\n-    try {\n-        // Ensure client is ready\n-        if (client.status !== 'ready') {\n-            throw new Error('Redis client is not ready');\n-        }\n+client.on('ready', () => {\n+    console.log('Redis ready to use');\n+});\n \n-        await client.set('test_key', 'test_value');\n-        console.log('Key set successfully');\n+client.on('error', (err) => {\n+    console.log(err.message);\n+});\n \n-        const value = await client.get('test_key');\n-        console.log('Key value:', value);\n-    } catch (err) {\n-        console.error('Error performing operations:', err.message);\n-    } finally {\n-        if (client.status !== 'end') {\n-            client.quit((err) => {\n-                if (err) {\n-                    console.error('Error quitting Redis client:', err.message);\n-                } else {\n-                    console.log('Redis client disconnected');\n-                }\n-                process.exit(0);\n-            });\n-        }\n-    }\n-};\n+client.on('end', () => {\n+    console.log('Redis disconnected');\n+});\n \n-// Run operations\n-performOperations();\n-\n-// Handle process termination\n process.on('SIGINT', () => {\n-    console.log('SIGINT received: quitting Redis client...');\n-    client.quit((err) => {\n-        if (err) {\n-            console.error('Error quitting Redis client:', err.message);\n-        } else {\n-            console.log('Redis client disconnected');\n-        }\n-        process.exit(0);\n-    });\n+    client.quit();\n });\n+\n+module.exports = client;\n"
+                },
+                {
+                    "date": 1724886360959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n-process.on('SIGINT', () => {\n-    client.quit();\n-});\n+// process.on('SIGINT', () => {\n+//     client.quit();\n+// });\n \n module.exports = client;\n"
+                },
+                {
+                    "date": 1724886446408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const redis = require('redis');\n \n const client = redis.createClient({\n     port: 6379,\n-    host: \"127.0.0.1\"\n+    host: '127.0.0.1'\n });\n \n client.on('connect', () => {\n     console.log('Redis connected');\n@@ -13,16 +13,12 @@\n     console.log('Redis ready to use');\n });\n \n client.on('error', (err) => {\n-    console.log(err.message);\n+    console.error('Redis error:', err.message);\n });\n \n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n-// process.on('SIGINT', () => {\n-//     client.quit();\n-// });\n-\n module.exports = client;\n"
+                },
+                {
+                    "date": 1724886479508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const redis = require('redis');\n \n const client = redis.createClient({\n     port: 6379,\n-    host: '127.0.0.1'\n+    host: \"127.0.0.1\"\n });\n \n client.on('connect', () => {\n     console.log('Redis connected');\n@@ -13,12 +13,16 @@\n     console.log('Redis ready to use');\n });\n \n client.on('error', (err) => {\n-    console.error('Redis error:', err.message);\n+    console.log(err.message);\n });\n \n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n+// process.on('SIGINT', () => {\n+//     client.quit();\n+// });\n+\n module.exports = client;\n"
+                },
+                {
+                    "date": 1724886487702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n-// process.on('SIGINT', () => {\n-//     client.quit();\n-// });\n+process.on('SIGINT', () => {\n+    client.quit();\n+});\n \n module.exports = client;\n"
+                },
+                {
+                    "date": 1724886607098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,28 +1,29 @@\n-const redis = require('redis');\n+const { createClient } = require('redis');\n \n-const client = redis.createClient({\n-    port: 6379,\n-    host: \"127.0.0.1\"\n+const client = createClient({\n+    url: 'redis://127.0.0.1:6379'\n });\n \n+client.on('error', (err) => {\n+    console.error('Redis client error:', err.message);\n+});\n+\n client.on('connect', () => {\n     console.log('Redis connected');\n });\n \n client.on('ready', () => {\n     console.log('Redis ready to use');\n });\n \n-client.on('error', (err) => {\n-    console.log(err.message);\n-});\n-\n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n-process.on('SIGINT', () => {\n-    client.quit();\n+// Graceful shutdown\n+process.on('SIGINT', async () => {\n+    await client.quit();\n+    process.exit(0);\n });\n \n module.exports = client;\n"
+                },
+                {
+                    "date": 1724886738091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const { createClient } = require('redis');\n \n const client = createClient({\n-    url: 'redis://127.0.0.1:6379'\n+    url: 'redis://'\n });\n \n client.on('error', (err) => {\n     console.error('Redis client error:', err.message);\n"
+                },
+                {
+                    "date": 1724887233933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const { createClient } = require('redis');\n \n const client = createClient({\n-    url: 'redis://'\n+    url: 'redis://127.0.0.1:8081'\n });\n \n client.on('error', (err) => {\n     console.error('Redis client error:', err.message);\n"
+                },
+                {
+                    "date": 1724888204658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,29 +1,28 @@\n-const { createClient } = require('redis');\n+const redis = require('redis');\n \n-const client = createClient({\n-    url: 'redis://127.0.0.1:8081'\n+const client = redis.createClient({\n+    port: 6379,\n+    host: \"127.0.0.1\"\n });\n \n-client.on('error', (err) => {\n-    console.error('Redis client error:', err.message);\n-});\n-\n client.on('connect', () => {\n     console.log('Redis connected');\n });\n \n client.on('ready', () => {\n     console.log('Redis ready to use');\n });\n \n+client.on('error', (err) => {\n+    console.log(err.message);\n+});\n+\n client.on('end', () => {\n     console.log('Redis disconnected');\n });\n \n-// Graceful shutdown\n-process.on('SIGINT', async () => {\n-    await client.quit();\n-    process.exit(0);\n+process.on('SIGINT', () => {\n+    client.quit();\n });\n \n module.exports = client;\n"
+                }
+            ],
+            "date": 1724882674850,
+            "name": "Commit-0",
+            "content": "const redis"
+        }
+    ]
+}
