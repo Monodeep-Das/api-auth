@@ -1,0 +1,78 @@
+{
+    "sourceFile": "rest.http",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1724853562370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724853568702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-POST \n\\ No newline at end of file\n+POST http\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724853575020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-POST http\n\\ No newline at end of file\n+POST http://localhost\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724853580303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-POST http://localhost\n\\ No newline at end of file\n+POST http://localhost:3000\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724853585865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-POST http://localhost:3000\n\\ No newline at end of file\n+POST http://localhost:3000/auth/\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724853591322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-POST http://localhost:3000/auth/\n\\ No newline at end of file\n+POST http://localhost:3000/auth/regis\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724853598453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-POST http://localhost:3000/auth/regis\n\\ No newline at end of file\n+POST http://localhost:3000/auth/register\n+Conte\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724853606293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,4 @@\n POST http://localhost:3000/auth/register\n-Conte\n\\ No newline at end of file\n+Content-Type: application/json\n+{\n+  \"email\": \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724853622788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n {\n-  \"email\": \n\\ No newline at end of file\n+  \"email\": \"user1234@example.com\",\n+  \"password\": \"P@ssw0rd!2024\"\n+}\n"
+                },
+                {
+                    "date": 1724853687521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,5 @@\n {\n   \"email\": \"user1234@example.com\",\n   \"password\": \"P@ssw0rd!2024\"\n }\n+Header name must be a valid HTTP token [\"{\"]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724853723188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,4 @@\n {\n   \"email\": \"user1234@example.com\",\n   \"password\": \"P@ssw0rd!2024\"\n }\n-Header name must be a valid HTTP token [\"{\"]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724854069806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n+\n {\n   \"email\": \"user1234@example.com\",\n   \"password\": \"P@ssw0rd!2024\"\n }\n"
+                },
+                {
+                    "date": 1724854082513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n Content-Type: application/json\n \n {\n   \"email\": \"user1234@example.com\",\n-  \"password\": \"P@ssw0rd!2024\"\n+  \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724854094338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n-  \"email\": \"user1234@example.com\",\n+  \"email\": \"m.monodas@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724854118972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n-  \"email\": \"m.monodas@gmail.com\",\n+  \"email\": \"m.monoooodas@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                },
+                {
+                    "date": 1724854154977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n POST http://localhost:3000/auth/register\n Content-Type: application/json\n \n {\n-  \"email\": \"m.monoooodas@gmail.com\",\n+  \"email\": \"muuunoooo@gmail.com\",\n   \"password\": \"1234\"\n }\n"
+                }
+            ],
+            "date": 1724853562370,
+            "name": "Commit-0",
+            "content": "POST "
+        }
+    ]
+}

@@ -1,0 +1,230 @@
+{
+    "sourceFile": "helpers/jwt_helper.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 53,
+            "patches": [
+                {
+                    "date": 1724845320226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1724845325782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const \n\\ No newline at end of file\n+const JWT = req\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845331255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-const JWT = req\n\\ No newline at end of file\n+const JWT = require('jsonwebtoken');\n"
+                },
+                {
+                    "date": 1724845350333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n const JWT = require('jsonwebtoken');\n+const craete\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845371894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,4 @@\n const JWT = require('jsonwebtoken');\n-const craete\n\\ No newline at end of file\n+const craeteError = require('http-errors');\n+\n+module.exports = {\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845379530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n const JWT = require('jsonwebtoken');\n const craeteError = require('http-errors');\n \n-module.exports = {\n\\ No newline at end of file\n+module.exports = {\n+    signAccessToken: (userId) => {\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845397556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n const JWT = require('jsonwebtoken');\n const craeteError = require('http-errors');\n \n module.exports = {\n-    signAccessToken: (userId) => {\n\\ No newline at end of file\n+    signAccessToken: (userId) => {\n"
+                },
+                {
+                    "date": 1724845402734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,21 @@\n const craeteError = require('http-errors');\n \n module.exports = {\n     signAccessToken: (userId) => {\n+        return new Promise((resolve, reject) => {\n+            const payload = {};\n+            const secret = process.env.ACCESS_TOKEN_SECRET;\n+            const options = {\n+                expiresIn: '1h',\n+                issuer: 'yourdomain.com',\n+                audience: userId,\n+            };\n+            JWT.sign(payload, secret, options, (err, token) => {\n+                if (err) {\n+                    console.log(err.message);\n+                    return reject(craeteError.InternalServerError());\n+                }\n+                resolve(token);\n+            });\n+        });\n+    }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845777510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n                 if (err) {\n                     console.log(err.message);\n                     return reject(craeteError.InternalServerError());\n                 }\n+            };\n                 resolve(token);\n             });\n         });\n     }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845791109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,6 @@\n             };\n                 resolve(token);\n             });\n         });\n-    }\n\\ No newline at end of file\n+    },\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845811959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,8 @@\n                 if (err) {\n                     console.log(err.message);\n                     return reject(craeteError.InternalServerError());\n                 }\n-            };\n-                resolve(token);\n-            });\n+            resolve(token);\n         });\n     },\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845824365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,5 @@\n                 }\n             resolve(token);\n         });\n     },\n-};\n\\ No newline at end of file\n+},\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845830031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,5 @@\n                 }\n             resolve(token);\n         });\n     },\n-},\n\\ No newline at end of file\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845902684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,20 +3,5 @@\n \n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n-            const payload = {};\n-            const secret = process.env.ACCESS_TOKEN_SECRET;\n-            const options = {\n-                expiresIn: '1h',\n-                issuer: 'yourdomain.com',\n-                audience: userId,\n-            };\n-            JWT.sign(payload, secret, options, (err, token) => {\n-                if (err) {\n-                    console.log(err.message);\n-                    return reject(craeteError.InternalServerError());\n-                }\n-            resolve(token);\n-        });\n-    },\n-};\n\\ No newline at end of file\n+            \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845912484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n \n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n-            \n\\ No newline at end of file\n+            const payload = \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845921930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,6 @@\n \n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n-            const payload = \n\\ No newline at end of file\n+            const payload = {\n+                name \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845930631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                name \n\\ No newline at end of file\n+                name: 'John Doe',\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845936625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                name: 'John Doe',\n\\ No newline at end of file\n+                name: 'You',\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845947386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,6 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                name: 'You',\n\\ No newline at end of file\n+                name: 'Your Name',\n+            }    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1724845955432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 name: 'Your Name',\n-            }    \n\\ No newline at end of file\n+            }\n"
+                },
+                {
+                    "date": 1724845963421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,5 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 name: 'Your Name',\n             }\n+            const secret = \n"
+                },
+                {
+                    "date": 1724845971073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 name: 'Your Name',\n             }\n-            const secret = \n+            const secret = 'some name secre\n"
+                },
+                {
+                    "date": 1724845976725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 name: 'Your Name',\n             }\n-            const secret = 'some name secre\n+            const secret = 'some name secret'\n"
+                },
+                {
+                    "date": 1724845985238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,4 +7,5 @@\n             const payload = {\n                 name: 'Your Name',\n             }\n             const secret = 'some name secret'\n+            const options\n"
+                },
+                {
+                    "date": 1724845991477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,6 @@\n             const payload = {\n                 name: 'Your Name',\n             }\n             const secret = 'some name secret'\n-            const options\n+            const options = {}\n+                \n"
+                },
+                {
+                    "date": 1724845999378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,6 @@\n                 name: 'Your Name',\n             }\n             const secret = 'some name secret'\n             const options = {}\n+            JWT.sign\n                 \n"
+                },
+                {
+                    "date": 1724846005862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n                 name: 'Your Name',\n             }\n             const secret = 'some name secret'\n             const options = {}\n-            JWT.sign\n+            JWT.sign(payload, secret, options, \n                 \n"
+                },
+                {
+                    "date": 1724846017874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n                 name: 'Your Name',\n             }\n             const secret = 'some name secret'\n             const options = {}\n-            JWT.sign(payload, secret, options, \n+            JWT.sign(payload, secret, options, (err\n                 \n"
+                },
+                {
+                    "date": 1724846023203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,7 @@\n                 name: 'Your Name',\n             }\n             const secret = 'some name secret'\n             const options = {}\n-            JWT.sign(payload, secret, options, (err\n+            JWT.sign(payload, secret, options, (err, token) => {\n                 \n+                \n"
+                },
+                {
+                    "date": 1724846028802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n             }\n             const secret = 'some name secret'\n             const options = {}\n             JWT.sign(payload, secret, options, (err, token) => {\n+                if (err) \n                 \n-                \n"
+                },
+                {
+                    "date": 1724846036508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n             }\n             const secret = 'some name secret'\n             const options = {}\n             JWT.sign(payload, secret, options, (err, token) => {\n-                if (err) \n+                if (err) reject(err)\n                 \n"
+                },
+                {
+                    "date": 1724846041994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,6 @@\n             const secret = 'some name secret'\n             const options = {}\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n+                resolve(token\n                 \n"
+                },
+                {
+                    "date": 1724846047788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,7 @@\n             const secret = 'some name secret'\n             const options = {}\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n-                resolve(token\n+                resolve(token)\n+            }\n                 \n"
+                },
+                {
+                    "date": 1724846053529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,7 @@\n             const options = {}\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n-            }\n+            })\n+        \n                 \n"
+                },
+                {
+                    "date": 1724846058922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,7 @@\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n             })\n+        })\n         \n                 \n"
+                },
+                {
+                    "date": 1724846066309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,5 @@\n                 if (err) reject(err)\n                 resolve(token)\n             })\n         })\n-        \n-                \n+    }                \n"
+                },
+                {
+                    "date": 1724846074136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,6 @@\n                 if (err) reject(err)\n                 resolve(token)\n             })\n         })\n-    }                \n+    },\n+}                \n"
+                },
+                {
+                    "date": 1724851876237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n             const payload = {\n                 name: 'Your Name',\n             }\n             const secret = 'some name secret'\n-            const options = {}\n+            const options = {\n+                \n+            }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n             })\n"
+                },
+                {
+                    "date": 1724851885338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 name: 'Your Name',\n             }\n             const secret = 'some name secret'\n             const options = {\n-                \n+                e\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                },
+                {
+                    "date": 1724851890548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 name: 'Your Name',\n             }\n             const secret = 'some name secret'\n             const options = {\n-                e\n+                expiresIn\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                },
+                {
+                    "date": 1724851948457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,13 @@\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 name: 'Your Name',\n+                iss\n             }\n             const secret = 'some name secret'\n             const options = {\n-                expiresIn\n+                expiresIn: '1h',\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                },
+                {
+                    "date": 1724851955175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 name: 'Your Name',\n-                iss\n+                iss: \"\"\n             }\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n"
+                },
+                {
+                    "date": 1724851962651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 name: 'Your Name',\n-                iss: \"\"\n+                iss: \"monopage.com\",\n             }\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n"
+                },
+                {
+                    "date": 1724851969733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n             }\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n+                iss\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                },
+                {
+                    "date": 1724851978364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             }\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n-                iss\n+                issuer: 'monopage.com',\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                },
+                {
+                    "date": 1724851996765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,9 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                name: 'Your Name',\n-                iss: \"monopage.com\",\n+                \n             }\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n"
+                },
+                {
+                    "date": 1724852022903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                \n+                aud\n             }\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n"
+                },
+                {
+                    "date": 1724852031650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n module.exports = {\n     signAccessToken: (userId) => {\n         return new Promise((resolve, reject) => {\n             const payload = {\n-                aud\n+                \n             }\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n"
+                },
+                {
+                    "date": 1724852042068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n+                au\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                },
+                {
+                    "date": 1724852054437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n-                au\n+                \n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                },
+                {
+                    "date": 1724852065845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n-                \n+                audience: userId,\n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                },
+                {
+                    "date": 1724852973487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 \n             }\n-            const secret = 'some name secret'\n+            const secret = 'proc'\n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n                 audience: userId,\n"
+                },
+                {
+                    "date": 1724853911406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n         return new Promise((resolve, reject) => {\n             const payload = {\n                 \n             }\n-            const secret = 'proc'\n+            const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n                 audience: userId,\n"
+                },
+                {
+                    "date": 1724854132124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n             const secret = 'some name secret'\n             const options = {\n                 expiresIn: '1h',\n                 issuer: 'monopage.com',\n-                audience: userId,\n+                audience: \n             }\n             JWT.sign(payload, secret, options, (err, token) => {\n                 if (err) reject(err)\n                 resolve(token)\n"
+                }
+            ],
+            "date": 1724845320226,
+            "name": "Commit-0",
+            "content": "const "
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 21,
+            "activePatchIndex": 63,
             "patches": [
                 {
                     "date": 1724738842108,
@@ -92,6 +92,174 @@
                 {
                     "date": 1724742072675,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,8 @@\n         required: true,\n     }\n });\n \n-const user = mongoose.model('user, UserSchema');\n+// The first argument should be the name of the model, and the second should be the schema\n+const User = mongoose.model('User', UserSchema);\n+\n+module.exports = User;\n"
+                },
+                {
+                    "date": 1724757361356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n         required: true,\n     }\n });\n \n-// The first argument should be the name of the model, and the second should be the schema\n+\n+\n+\n const User = mongoose.model('User', UserSchema);\n \n module.exports = User;\n"
+                },
+                {
+                    "date": 1724757367510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n         required: true,\n     }\n });\n \n+UserSchema.\n \n \n-\n const User = mongoose.model('User', UserSchema);\n \n module.exports = User;\n"
+                },
+                {
+                    "date": 1724757392697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         required: true,\n     }\n });\n \n-UserSchema.\n+UserSchema.pre()\n \n \n const User = mongoose.model('User', UserSchema);\n \n"
+                },
+                {
+                    "date": 1724757398838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n         required: true,\n     }\n });\n \n-UserSchema.pre()\n+UserSchema.pre('save', async function(next) {\n+    \n \n \n const User = mongoose.model('User', UserSchema);\n \n"
+                },
+                {
+                    "date": 1724757409525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         required: true,\n     }\n });\n \n-UserSchema.pre('save', async function(next) {\n+UserSchema.pre('save', asyncnext) {\n     \n \n \n const User = mongoose.model('User', UserSchema);\n"
+                },
+                {
+                    "date": 1724757416831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         required: true,\n     }\n });\n \n-UserSchema.pre('save', asyncnext) {\n+UserSchema.pre('save', async (next)=> {\n     \n \n \n const User = mongoose.model('User', UserSchema);\n"
+                },
+                {
+                    "date": 1724757425967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         required: true,\n     }\n });\n \n-UserSchema.pre('save', async (next)=> {\n+UserSchema.pre('save', async (next) => {\n     \n \n \n const User = mongoose.model('User', UserSchema);\n"
+                },
+                {
+                    "date": 1724757442621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,11 @@\n     }\n });\n \n UserSchema.pre('save', async (next) => {\n-    \n \n+)    \n \n+\n const User = mongoose.model('User', UserSchema);\n \n module.exports = User;\n"
+                },
+                {
+                    "date": 1724757449059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n });\n \n UserSchema.pre('save', async (next) => {\n \n-)    \n+)};    \n \n \n const User = mongoose.model('User', UserSchema);\n \n"
+                },
+                {
+                    "date": 1724757474844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n });\n \n UserSchema.pre('save', async (next) => {\n \n-)};    \n+});    \n \n \n const User = mongoose.model('User', UserSchema);\n \n"
+                },
+                {
+                    "date": 1724757479881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n });\n \n UserSchema.pre('save', async (next) => {\n \n-});    \n+)};    \n \n \n const User = mongoose.model('User', UserSchema);\n \n"
+                },
+                {
+                    "date": 1724757497261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,11 @@\n     }\n });\n \n UserSchema.pre('save', async (next) => {\n+    \n \n-)};    \n+});    \n \n \n const User = mongoose.model('User', UserSchema);\n \n"
+                },
+                {
+                    "date": 1724757507190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,14 @@\n     }\n });\n \n UserSchema.pre('save', async (next) => {\n-    \n+    try {\n+        \n+    } catch (error) {\n \n+    }\n+\n });    \n \n \n const User = mongoose.model('User', UserSchema);\n"
+                },
+                {
+                    "date": 1724757512621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n UserSchema.pre('save', async (next) => {\n     try {\n         \n     } catch (error) {\n+        next(error);\n \n     }\n \n });    \n"
+                },
+                {
+                    "date": 1724757537402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,11 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         \n+        \n     } catch (error) {\n         next(error);\n-\n     }\n \n });    \n \n"
+                },
+                {
+                    "date": 1724757543048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,11 @@\n });\n \n UserSchema.pre('save', async (next) => {\n     try {\n+        console.log('before saving the user');\n+        next();\n         \n-        \n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724757563450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,8 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         console.log('before saving the user');\n-        next();\n-        \n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724757586352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,16 @@\n     }\n \n });    \n \n+UserSchema.pre('save', async (next) => {\n+    try {\n+        console.log('before saving the user');\n+    } catch (error) {\n+        next(error);\n+    }\n \n+});    \n+\n const User = mongoose.model('User', UserSchema);\n \n module.exports = User;\n"
+                },
+                {
+                    "date": 1724757592946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\n \n });    \n \n-UserSchema.pre('save', async (next) => {\n+UserSchema.post('save', async (next) => {\n     try {\n         console.log('before saving the user');\n     } catch (error) {\n         next(error);\n"
+                },
+                {
+                    "date": 1724757614138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n });    \n \n UserSchema.post('save', async (next) => {\n     try {\n-        console.log('before saving the user');\n+        console.log('after saving the user');\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724757623552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n });    \n \n UserSchema.post('save', async (next) => {\n     try {\n-        console.log('after saving the user');\n+        console.log('after saving a user');\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724757821127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n });\n \n UserSchema.pre('save', async (next) => {\n     try {\n-        console.log('before saving the user');\n+        console.log('Called before saving a user');\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724758893438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,16 +22,16 @@\n     }\n \n });    \n \n-UserSchema.post('save', async (next) => {\n-    try {\n-        console.log('after saving a user');\n-    } catch (error) {\n-        next(error);\n-    }\n+// UserSchema.post('save', async (next) => {\n+//     try {\n+//         console.log('Called after saving a user');\n+//     } catch (error) {\n+//         next(error);\n+//     }\n \n-});    \n+// });    \n \n const User = mongoose.model('User', UserSchema);\n \n module.exports = User;\n"
+                },
+                {
+                    "date": 1724758911399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n });\n \n UserSchema.pre('save', async (next) => {\n     try {\n-        console.log('Called before saving a user');\n+        \n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724758916529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n });\n \n UserSchema.pre('save', async (next) => {\n     try {\n-        \n+        const salt \n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724758922441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n });\n \n UserSchema.pre('save', async (next) => {\n     try {\n-        const salt \n+        const salt = await bc\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724758928523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n });\n \n UserSchema.pre('save', async (next) => {\n     try {\n-        const salt = await bc\n+        const salt = await bcypt.\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724758936331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n });\n \n UserSchema.pre('save', async (next) => {\n     try {\n-        const salt = await bcypt.\n+        const salt = await bcypt.genSalt\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759011552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,10 @@\n });\n \n UserSchema.pre('save', async (next) => {\n     try {\n-        const salt = await bcypt.genSalt\n+        const salt = await bcypt.genSalt(10);\n+        cons\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759018168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        cons\n+        console.log()\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759024211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        console.log()\n+        console.log('this.')\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759032548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        console.log('this.')\n+        console.log('this.email', this.passw)\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759162932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        console.log('this.email', this.passw)\n+        console.log('this.email', this.password');\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759178004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        console.log('this.email', this.password');\n+        console.log('this.email', this.password);\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759283240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        console.log('this.email', this.password);\n+        console.log('this.email, this.password);\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759384128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n const mongoose = require('mongoose');\n const Schema = mongoose.Schema;\n \n+\n const UserSchema = new Schema({\n     email: {\n         type: String,\n         required: true,\n@@ -16,9 +17,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        console.log('this.email, this.password);\n+        console.log(this.email, this.password);\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759549061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n const mongoose = require('mongoose');\n const Schema = mongoose.Schema;\n+const bcypt = require('bcrypt');\n \n-\n const UserSchema = new Schema({\n     email: {\n         type: String,\n         required: true,\n@@ -17,9 +17,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        console.log(this.email, this.password);\n+        cconst \n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759555227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        cconst \n+        cconst hashedPassword = await bcypt.hash(this.password, salt);\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759585598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n-        cconst hashedPassword = await bcypt.hash(this.password, salt);\n+        const hashedPassword = await bcypt.hash(this.password, salt);\n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759599867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n         const hashedPassword = await bcypt.hash(this.password, salt);\n+        \n     } catch (error) {\n         next(error);\n     }\n \n"
+                },
+                {
+                    "date": 1724759605233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n UserSchema.pre('save', async (next) => {\n     try {\n         const salt = await bcypt.genSalt(10);\n         const hashedPassword = await bcypt.hash(this.password, salt);\n+        this.password = hashedPassword;\n         \n     } catch (error) {\n         next(error);\n     }\n"
+                },
+                {
+                    "date": 1724759875511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n const mongoose = require('mongoose');\n-const Schema = mongoose.Schema;\n-const bcypt = require('bcrypt');\n+const bcrypt = require('bcrypt');\n \n-const UserSchema = new Schema({\n+const UserSchema = new mongoose.Schema({\n     email: {\n         type: String,\n         required: true,\n         lowercase: true,\n@@ -14,28 +13,18 @@\n         required: true,\n     }\n });\n \n-UserSchema.pre('save', async (next) => {\n+UserSchema.pre('save', async function(next) {\n     try {\n-        const salt = await bcypt.genSalt(10);\n-        const hashedPassword = await bcypt.hash(this.password, salt);\n-        this.password = hashedPassword;\n-        \n+        if (this.isModified('password')) {\n+            const salt = await bcrypt.genSalt(10);\n+            this.password = await bcrypt.hash(this.password, salt);\n+        }\n+        next();\n     } catch (error) {\n         next(error);\n     }\n+});\n \n-});    \n-\n-// UserSchema.post('save', async (next) => {\n-//     try {\n-//         console.log('Called after saving a user');\n-//     } catch (error) {\n-//         next(error);\n-//     }\n-\n-// });    \n-\n const User = mongoose.model('User', UserSchema);\n-\n module.exports = User;\n"
                 }
             ],
             "date": 1724738842107,
