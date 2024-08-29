@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 106,
+            "activePatchIndex": 111,
             "patches": [
                 {
                     "date": 1724712982223,
@@ -432,6 +432,26 @@
                 {
                     "date": 1724888281325,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,13 @@\n const AuthRoute = require('./Routes/Auth.route');\n const { verifyAccessToken } = require('./helpers/jwt_helper');\n const client = require('./helpers/init_redis');\n \n-client.SET('foo', 'baa');\n-client.GET('foo', (err, value) => {\n-    if (err) console.log(err.message)\n-        console.log \n+// client.SET('foo', 'baa');\n+// client.GET('foo', (err, value) => {\n+//     if (err) console.log(err.message)\n+//     console.log(value);\n+// }); \n \n const app = express();\n \n app.use(morgan('dev'));\n"
+                },
+                {
+                    "date": 1724952002839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,13 @@\n const AuthRoute = require('./Routes/Auth.route');\n const { verifyAccessToken } = require('./helpers/jwt_helper');\n const client = require('./helpers/init_redis');\n \n-// client.SET('foo', 'baa');\n-// client.GET('foo', (err, value) => {\n-//     if (err) console.log(err.message)\n-//     console.log(value);\n-// }); \n+client.SET('foo', 'baa');\n+client.GET('foo', (err, value) => {\n+    if (err) console.log(err.message)\n+    console.log(value);\n+}); \n \n const app = express();\n \n app.use(morgan('dev'));\n"
+                },
+                {
+                    "date": 1724952014584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,13 @@\n const AuthRoute = require('./Routes/Auth.route');\n const { verifyAccessToken } = require('./helpers/jwt_helper');\n const client = require('./helpers/init_redis');\n \n-client.SET('foo', 'baa');\n-client.GET('foo', (err, value) => {\n-    if (err) console.log(err.message)\n-    console.log(value);\n-}); \n+// client.SET('foo', 'baa');\n+// client.GET('foo', (err, value) => {\n+//     if (err) console.log(err.message)\n+//     console.log(value);\n+// }); \n \n const app = express();\n \n app.use(morgan('dev'));\n"
+                },
+                {
+                    "date": 1724952191539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,13 @@\n const AuthRoute = require('./Routes/Auth.route');\n const { verifyAccessToken } = require('./helpers/jwt_helper');\n const client = require('./helpers/init_redis');\n \n-// client.SET('foo', 'baa');\n-// client.GET('foo', (err, value) => {\n-//     if (err) console.log(err.message)\n-//     console.log(value);\n-// }); \n+client.SET('foo', 'baa');\n+client.GET('foo', (err, value) => {\n+    if (err) console.log(err.message)\n+    console.log(value);\n+}); \n \n const app = express();\n \n app.use(morgan('dev'));\n"
+                },
+                {
+                    "date": 1724952227105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,8 @@\n const AuthRoute = require('./Routes/Auth.route');\n const { verifyAccessToken } = require('./helpers/jwt_helper');\n const client = require('./helpers/init_redis');\n \n-client.SET('foo', 'baa');\n-client.GET('foo', (err, value) => {\n-    if (err) console.log(err.message)\n-    console.log(value);\n-}); \n \n const app = express();\n \n app.use(morgan('dev'));\n"
+                },
+                {
+                    "date": 1724952288983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,29 +3,40 @@\n const createError = require('http-errors');\n require('dotenv').config();\n require('./helpers/init_mongodb');\n const AuthRoute = require('./Routes/Auth.route');\n+const client = require('./helpers/init_redis');\n const { verifyAccessToken } = require('./helpers/jwt_helper');\n-const client = require('./helpers/init_redis');\n \n-\n const app = express();\n \n+// Ensure Redis is connected before performing any operations\n+client.on('ready', () => {\n+    console.log('Redis is ready to use');\n+    \n+    // Setting and getting a value from Redis\n+    client.SET('foo', 'baa', (err, reply) => {\n+        if (err) console.log(err.message);\n+        console.log('SET reply:', reply);  // Confirm SET operation\n+    });\n+\n+    client.GET('foo', (err, value) => {\n+        if (err) console.log(err.message);\n+        console.log('GET value:', value);  // Retrieve the value of 'foo'\n+    });\n+});\n+\n app.use(morgan('dev'));\n app.use(express.json());\n app.use(express.urlencoded({ extended: true }));\n \n-app.get('/', verifyAccessToken, async(req, res, next) => {\n-\n+app.get('/', verifyAccessToken, async (req, res, next) => {\n     res.send('Hello From Express');\n });\n \n app.use('/auth', AuthRoute);\n \n-app.use(async(req, res, next) => {\n-    // const error = new Error('Not Found');\n-    // error.status = 404;\n-    // next(error);\n+app.use(async (req, res, next) => {\n     next(createError.NotFound());\n });\n \n app.use((err, req, res, next) => {\n@@ -41,5 +52,5 @@\n const PORT = process.env.PORT || 3000;\n \n app.listen(PORT, () => {\n     console.log(`Server is running on port ${PORT}`);\n-});\n\\ No newline at end of file\n+});\n"
                 }
             ],
             "date": 1724712982223,
