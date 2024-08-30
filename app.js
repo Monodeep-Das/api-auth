@@ -4,25 +4,24 @@ const createError = require('http-errors');
 require('dotenv').config();
 require('./helpers/init_mongodb');
 const AuthRoute = require('./Routes/Auth.route');
-const client = require('./helpers/init_redis');
+const redis = require('./helpers/init_redis');
 const { verifyAccessToken } = require('./helpers/jwt_helper');
 
 const app = express();
 
 // Ensure Redis is connected before performing any operations
-client.on('ready', () => {
-    console.log('Redis is ready to use');
-    
-    // Setting and getting a value from Redis
-    client.SET('foo', 'baa', (err, reply) => {
-        if (err) console.log(err.message);
-        console.log('SET reply:', reply);  // Confirm SET operation
-    });
+redis.set('foo', 'bar', (err, reply) => {
+    if (err) {
+        console.error(err);
+    }
+    console.log(reply);
+});
 
-    client.GET('foo', (err, value) => {
-        if (err) console.log(err.message);
-        console.log('GET value:', value);  // Retrieve the value of 'foo'
-    });
+redis.get('foo', (err, reply) => {
+    if (err) {
+        console.error(err);
+    }
+    console.log(reply);
 });
 
 app.use(morgan('dev'));
